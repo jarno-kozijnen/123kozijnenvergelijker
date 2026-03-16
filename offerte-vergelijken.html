@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kozijnen Offertes Vergelijken | 3 Gratis Offertes Ontvangen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== VERGELIJK PAGINA ===== */
+        .vergelijk-hero {
+            background: linear-gradient(135deg, #1E5C2F 0%, #2d7a42 100%);
+            padding: 80px 0 60px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .vergelijk-hero h1 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .vergelijk-hero h1 span { color: #FF6500; }
+
+        .vergelijk-hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .vergelijk-trust {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            flex-wrap: wrap;
+            font-size: 14px;
+            opacity: 0.85;
+        }
+
+        .vergelijk-trust span { display: flex; align-items: center; gap: 6px; }
+
+        /* HOE WERKT HET */
+        .hoe-werkt {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .stappen-vergelijk {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .stap-vergelijk {
+            text-align: center;
+            padding: 36px 28px;
+            background: #f8faf8;
+            border-radius: 16px;
+            position: relative;
+        }
+
+        .stap-vergelijk::after {
+            content: '→';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: #ddd;
+        }
+
+        .stap-vergelijk:last-child::after { display: none; }
+
+        .stap-v-nr {
+            width: 60px;
+            height: 60px;
+            background: #1E5C2F;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 800;
+            margin: 0 auto 20px;
+        }
+
+        .stap-vergelijk h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .stap-vergelijk p { color: #666; font-size: 14px; line-height: 1.6; }
+
+        /* VOORDELEN VERGELIJKEN */
+        .voordelen-vergelijk {
+            background: #f8faf8;
+            padding: 80px 0;
+        }
+
+        .voordelen-vergelijk-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .voordeel-vergelijk-item {
+            background: #fff;
+            border-radius: 12px;
+            padding: 28px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .vv-icon {
+            width: 52px;
+            height: 52px;
+            background: #1E5C2F;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .vv-body h4 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 6px;
+        }
+
+        .vv-body p { color: #666; font-size: 14px; line-height: 1.6; }
+
+        /* VERGELIJK TABEL */
+        .vergelijk-tabel-wrap {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .vergelijk-tabel {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 48px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+
+        .vergelijk-tabel thead tr {
+            background: #1E5C2F;
+            color: #fff;
+        }
+
+        .vergelijk-tabel thead th {
+            padding: 20px 24px;
+            font-size: 15px;
+            font-weight: 700;
+            text-align: left;
+        }
+
+        .vergelijk-tabel thead th:first-child { width: 40%; }
+
+        .col-highlight {
+            background: rgba(255,101,0,0.15) !important;
+            position: relative;
+        }
+
+        .col-highlight-header {
+            background: #FF6500 !important;
+        }
+
+        .col-highlight-header::after {
+            content: '⭐ Beste keuze';
+            display: block;
+            font-size: 11px;
+            font-weight: 600;
+            opacity: 0.9;
+            margin-top: 2px;
+        }
+
+        .vergelijk-tabel tbody tr {
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .vergelijk-tabel tbody tr:last-child { border-bottom: none; }
+
+        .vergelijk-tabel tbody tr:nth-child(even) { background: #fafafa; }
+
+        .vergelijk-tabel tbody td {
+            padding: 16px 24px;
+            font-size: 14px;
+            color: #444;
+        }
+
+        .vergelijk-tabel tbody td:first-child {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .check { color: #1E5C2F; font-weight: 700; font-size: 16px; }
+        .cross { color: #ccc; font-size: 16px; }
+        .oranje { color: #FF6500; font-weight: 700; }
+
+        /* OFFERTEFORMULIER */
+        .offerte-form-wrap {
+            background: #f8faf8;
+            padding: 80px 0;
+        }
+
+        .offerte-form-inner {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .offerte-uitleg h2 { text-align: left; }
+        .offerte-uitleg p { color: #555; font-size: 16px; margin-bottom: 28px; }
+
+        .offerte-stap-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .offerte-stap {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .os-nr {
+            width: 36px;
+            height: 36px;
+            background: #FF6500;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .os-body strong { display: block; font-size: 15px; margin-bottom: 2px; }
+        .os-body span { font-size: 13px; color: #777; }
+
+        .offerte-garantie {
+            background: #1E5C2F;
+            color: #fff;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-top: 28px;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .offerte-garantie-icon { font-size: 32px; flex-shrink: 0; }
+        .offerte-garantie strong { display: block; font-size: 16px; margin-bottom: 4px; }
+        .offerte-garantie span { font-size: 13px; opacity: 0.85; }
+
+        .multi-offerte-form {
+            background: #fff;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+        }
+
+        .form-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1E5C2F;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .form-progress {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 28px;
+        }
+
+        .progress-bar {
+            flex: 1;
+            height: 4px;
+            background: #1E5C2F;
+            border-radius: 2px;
+        }
+
+        .progress-bar.inactive { background: #e8e8e8; }
+
+        .multi-offerte-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+        .multi-offerte-form input,
+        .multi-offerte-form select,
+        .multi-offerte-form textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            color: #333;
+            margin-bottom: 14px;
+        }
+
+        .multi-offerte-form input:focus,
+        .multi-offerte-form select:focus {
+            outline: none;
+            border-color: #1E5C2F;
+        }
+
+        .checkboxes { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #1E5C2F;
+            margin: 0;
+            flex-shrink: 0;
+        }
+
+        .form-disclaimer { font-size: 12px; color: #aaa; text-align: center; margin-top: 8px; }
+
+        /* REVIEWS VERGELIJK */
+        .reviews-vergelijk { padding: 80px 0; background: #fff; }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .stappen-vergelijk { grid-template-columns: 1fr; }
+            .stap-vergelijk::after { display: none; }
+            .voordelen-vergelijk-grid { grid-template-columns: 1fr; }
+            .offerte-form-inner { grid-template-columns: 1fr; }
+            .vergelijk-hero h1 { font-size: 28px; }
+        }
+
+        @media (max-width: 600px) {
+            .multi-offerte-form { padding: 24px 16px; }
+            .multi-offerte-form .form-row { grid-template-columns: 1fr; }
+            .vergelijk-tabel thead th { padding: 12px 10px; font-size: 12px; }
+            .vergelijk-tabel tbody td { padding: 12px 10px; font-size: 13px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="container header-inner">
+        <div class="logo">
+            <a href="index.html">
+                <span class="logo-123">123</span><span class="logo-kozijnen">kozijnen</span><span class="logo-verg">vergelijker</span><span class="logo-nl">.nl</span>
+            </a>
+        </div>
+        <nav class="nav" id="navLinks">
+            <a href="index.html#producten">Producten</a>
+            <a href="index.html#voordelen">Voordelen</a>
+            <a href="blog.html">Blog</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="#offerte-aanvragen" class="btn-nav">3 offertes aanvragen</a>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="Menu openen" onclick="document.getElementById('navLinks').classList.toggle('open');this.classList.toggle('open')">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="vergelijk-hero">
+    <div class="container">
+        <p style="display:inline-block;background:rgba(255,255,255,0.15);padding:6px 16px;border-radius:20px;font-size:13px;font-weight:700;margin-bottom:16px;">Altijd de beste prijs</p>
+        <h1>Ontvang <span>3 offertes</span> en<br>kies de beste prijs</h1>
+        <p>Vergelijk vrijblijvend meerdere aanbiedingen voor jouw kozijnen, deuren of schuifpuien. Gratis, snel en zonder verplichtingen.</p>
+        <a href="#offerte-aanvragen" class="btn-primary btn-pulse" style="font-size:18px; padding:16px 36px;">Vraag 3 offertes aan</a>
+        <div class="vergelijk-trust" style="margin-top:24px;">
+            <span>✓ Vrijblijvend</span>
+            <span>✓ Geen aanbetaling</span>
+            <span>✓ Binnen 24 uur reactie</span>
+            <span>✓ 9.3 klantbeoordeling</span>
+        </div>
+    </div>
+</section>
+
+<!-- HOE WERKT HET -->
+<section class="hoe-werkt">
+    <div class="container">
+        <h2>Hoe werkt het?</h2>
+        <p class="section-sub">In 3 stappen naar de beste deal voor jouw kozijnen</p>
+        <div class="stappen-vergelijk">
+            <div class="stap-vergelijk">
+                <div class="stap-v-nr">1</div>
+                <h3>Vul het formulier in</h3>
+                <p>Geef aan welke kozijnen, deuren of schuifpuien je nodig hebt. Het duurt minder dan 2 minuten.</p>
+            </div>
+            <div class="stap-vergelijk">
+                <div class="stap-v-nr">2</div>
+                <h3>Ontvang 3 offertes</h3>
+                <p>Wij stellen 3 offertes voor je op vanuit ons netwerk. Persoonlijk op maat, geen standaard prijzen.</p>
+            </div>
+            <div class="stap-vergelijk">
+                <div class="stap-v-nr">3</div>
+                <h3>Kies de beste prijs</h3>
+                <p>Vergelijk de offertes en kies wat het beste bij jou past. Geen verplichtingen, altijd vrijblijvend.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VOORDELEN -->
+<section class="voordelen-vergelijk">
+    <div class="container">
+        <h2>Waarom via 123KozijnenVergelijker vergelijken?</h2>
+        <p class="section-sub">Wij regelen het voor je, jij kiest de beste deal</p>
+        <div class="voordelen-vergelijk-grid">
+            <div class="voordeel-vergelijk-item">
+                <div class="vv-icon">💰</div>
+                <div class="vv-body">
+                    <h4>Altijd de scherpste prijs</h4>
+                    <p>Door meerdere offertes naast elkaar te leggen, betaal je nooit te veel. Gemiddeld besparen onze klanten 18% ten opzichte van de eerste offerte die ze zelf aanvroegen.</p>
+                </div>
+            </div>
+            <div class="voordeel-vergelijk-item">
+                <div class="vv-icon">🛡️</div>
+                <div class="vv-body">
+                    <h4>Gecertificeerde installateurs</h4>
+                    <p>Alle installateurs in ons netwerk zijn KOMO-gecertificeerd en bieden minimaal 10 jaar garantie op het werk.</p>
+                </div>
+            </div>
+            <div class="voordeel-vergelijk-item">
+                <div class="vv-icon">⚡</div>
+                <div class="vv-body">
+                    <h4>Snel geregeld</h4>
+                    <p>Binnen 24 uur ontvang je jouw eerste offerte. Geen weken wachten, geen eindeloos bellen. Wij regelen het voor je.</p>
+                </div>
+            </div>
+            <div class="voordeel-vergelijk-item">
+                <div class="vv-icon">🤝</div>
+                <div class="vv-body">
+                    <h4>Geen verplichtingen</h4>
+                    <p>Je bent nooit verplicht om een offerte te accepteren. Vergelijk rustig en beslis zelf wanneer jij er klaar voor bent.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VERGELIJK TABEL -->
+<section class="vergelijk-tabel-wrap">
+    <div class="container">
+        <h2>Wat zit er in jouw offerte?</h2>
+        <p class="section-sub">Transparant en compleet, geen verborgen kosten</p>
+        <table class="vergelijk-tabel">
+            <thead>
+                <tr>
+                    <th>Wat is inbegrepen?</th>
+                    <th>Standaard markt</th>
+                    <th class="col-highlight-header">123KozijnenVergelijker</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>HR++ glas standaard inbegrepen</td>
+                    <td><span class="cross">✗ Optioneel</span></td>
+                    <td class="col-highlight"><span class="check">✓ Standaard</span></td>
+                </tr>
+                <tr>
+                    <td>Gratis horren bij nieuwe kozijnen</td>
+                    <td><span class="cross">✗ Extra kosten</span></td>
+                    <td class="col-highlight"><span class="check">✓ Gratis inbegrepen</span></td>
+                </tr>
+                <tr>
+                    <td>Geen aanbetaling vereist</td>
+                    <td><span class="cross">✗ Vaak 30-50%</span></td>
+                    <td class="col-highlight"><span class="check">✓ Betaal achteraf</span></td>
+                </tr>
+                <tr>
+                    <td>Garantietermijn kozijnen</td>
+                    <td>Gemiddeld 10 jaar</td>
+                    <td class="col-highlight"><span class="oranje">20 jaar garantie</span></td>
+                </tr>
+                <tr>
+                    <td>Vrijblijvend adviesgesprek thuis</td>
+                    <td><span class="cross">✗ Niet altijd</span></td>
+                    <td class="col-highlight"><span class="check">✓ Altijd gratis</span></td>
+                </tr>
+                <tr>
+                    <td>Hulp bij subsidieaanvraag</td>
+                    <td><span class="cross">✗ Zelf regelen</span></td>
+                    <td class="col-highlight"><span class="check">✓ Wij regelen het</span></td>
+                </tr>
+                <tr>
+                    <td>Gecertificeerde monteurs</td>
+                    <td>Niet gegarandeerd</td>
+                    <td class="col-highlight"><span class="check">✓ KOMO gecertificeerd</span></td>
+                </tr>
+                <tr>
+                    <td>Offerte binnen 24 uur</td>
+                    <td>Gemiddeld 3-5 dagen</td>
+                    <td class="col-highlight"><span class="check">✓ Binnen 24 uur</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- OFFERTEFORMULIER -->
+<section class="offerte-form-wrap" id="offerte-aanvragen">
+    <div class="container offerte-form-inner">
+
+        <div class="offerte-uitleg">
+            <h2>Vraag jouw 3 offertes aan</h2>
+            <p>Vul het formulier in en ontvang binnen 24 uur 3 persoonlijke offertes op maat.</p>
+            <div class="offerte-stap-list">
+                <div class="offerte-stap">
+                    <div class="os-nr">1</div>
+                    <div class="os-body">
+                        <strong>Formulier invullen</strong>
+                        <span>Minder dan 2 minuten</span>
+                    </div>
+                </div>
+                <div class="offerte-stap">
+                    <div class="os-nr">2</div>
+                    <div class="os-body">
+                        <strong>Je ontvangt geheel vrijblijvend 3 offertes van gerenommeerde bedrijven in de buurt</strong>
+                        <span>Persoonlijk op maat, binnen 24 uur</span>
+                    </div>
+                </div>
+                <div class="offerte-stap">
+                    <div class="os-nr">3</div>
+                    <div class="os-body">
+                        <strong>Jij kiest de beste deal</strong>
+                        <span>Vrijblijvend, geen verplichtingen</span>
+                    </div>
+                </div>
+            </div>
+            <div class="offerte-garantie">
+                <div class="offerte-garantie-icon">🛡️</div>
+                <div>
+                    <strong>100% vrijblijvend</strong>
+                    <span>Je bent nooit verplicht een offerte te accepteren. Jij hebt altijd het laatste woord.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="multi-offerte-form">
+            <div class="form-progress">
+                <div class="progress-bar"></div>
+                <div class="progress-bar"></div>
+                <div class="progress-bar"></div>
+                <div class="progress-bar inactive"></div>
+            </div>
+            <p class="form-title">Gratis offertes aanvragen</p>
+            <form name="offerte-aanvraag" method="POST" data-netlify="true" action="/bedankt.html">
+                <input type="hidden" name="form-name" value="offerte-aanvraag">
+                <div class="form-row">
+                    <input type="text" name="voornaam" placeholder="Voornaam *" required>
+                    <input type="text" name="achternaam" placeholder="Achternaam *" required>
+                </div>
+                <div class="form-row">
+                    <input type="tel" name="telefoon" placeholder="Telefoonnummer *" required>
+                    <input type="email" name="email" placeholder="E-mailadres *" required>
+                </div>
+                <div class="form-row">
+                    <input type="text" name="postcode" placeholder="Postcode *" required>
+                    <input type="text" name="huisnummer" placeholder="Huisnummer *" required>
+                </div>
+                <p style="font-size:13px; font-weight:700; color:#1a1a1a; margin-bottom:8px; text-transform:uppercase; letter-spacing:.4px;">Wat wil je vervangen? *</p>
+                <div class="radio-options" style="margin-bottom:20px;">
+                    <label class="radio-option">
+                        <input type="radio" name="vervangen" value="Kozijnen (ramen)" required>
+                        <span>Kozijnen (ramen)</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="vervangen" value="Voordeur">
+                        <span>Voordeur</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="vervangen" value="Achterdeur">
+                        <span>Achterdeur</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="vervangen" value="Schuifpui">
+                        <span>Schuifpui</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="vervangen" value="Meerdere producten">
+                        <span>Meerdere producten</span>
+                    </label>
+                </div>
+                <p style="font-size:13px; font-weight:700; color:#1a1a1a; margin-bottom:8px; text-transform:uppercase; letter-spacing:.4px;">Wat voor glas heb je nu?</p>
+                <div class="radio-options" style="margin-bottom:20px;">
+                    <label class="radio-option">
+                        <input type="radio" name="huidig-glas" value="Enkel glas (voor 1985)">
+                        <span>Enkel glas</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="huidig-glas" value="Dubbel glas">
+                        <span>Dubbel glas</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="huidig-glas" value="HR+ glas">
+                        <span>HR+ glas</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="huidig-glas" value="HR++ glas">
+                        <span>HR++ glas</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="huidig-glas" value="Weet ik niet">
+                        <span>Weet ik niet</span>
+                    </label>
+                </div>
+                <p style="font-size:13px; font-weight:700; color:#1a1a1a; margin-bottom:8px; text-transform:uppercase; letter-spacing:.4px;">Wat wil je bereiken? (meerdere mogelijk)</p>
+                <div class="checkboxes">
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="doel" value="Lagere energierekening" checked> Lagere energierekening
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="doel" value="Betere geluidsisolatie"> Betere geluidsisolatie
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="doel" value="Veiliger wonen"> Veiliger wonen
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="doel" value="Mooiere uitstraling woning"> Mooiere uitstraling woning
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="doel" value="Financiering- en subsidieservice (gratis)"> Financiering- en subsidieservice (gratis)
+                    </label>
+                </div>
+                <textarea name="opmerking" placeholder="Aanvullende informatie (optioneel)" rows="3" style="margin-bottom:0;"></textarea>
+                <button type="submit" class="btn-primary btn-full" style="margin-top:10px;">Vraag mijn 3 offertes aan →</button>
+                <p class="form-disclaimer">Vrijblijvend en gratis. Door in te sturen ga je akkoord met onze privacyverklaring.</p>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews reviews-vergelijk">
+    <div class="container">
+        <h2>Wat anderen zeggen</h2>
+        <p class="section-sub">⭐⭐⭐⭐⭐ Gemiddeld 9.3, 400+ beoordelingen</p>
+        <div class="reviews-grid">
+            <div class="review-item">
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <p>"Via 123KozijnenVergelijker drie offertes ontvangen. De tweede was 23% goedkoper dan wat ik zelf had gevonden. Super service!"</p>
+                <strong>Sandra K., Enschede</strong>
+            </div>
+            <div class="review-item">
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <p>"Binnen een dag drie offertes in mijn mailbox. Uiteindelijk gekozen voor de middelste, perfecte prijs-kwaliteitverhouding."</p>
+                <strong>Thomas V., Almelo</strong>
+            </div>
+            <div class="review-item">
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <p>"Fijn dat je kunt vergelijken zonder dat je meteen wordt lastiggevallen. Rustig kiezen en toch de beste prijs."</p>
+                <strong>Inge B., Zwolle</strong>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container footer-inner">
+        <div class="footer-logo">
+            <span class="logo-123">123</span><span class="logo-kozijnen">kozijnen</span><span class="logo-verg">vergelijker</span><span class="logo-nl">.nl</span>
+            <p>Kozijnen vergelijken & laten plaatsen<br>Oldenzaal</p>
+        </div>
+        <div class="footer-links">
+            <h5>Producten</h5>
+            <a href="kunststof-kozijnen.html">Kunststof kozijnen</a>
+            <a href="kunststof-deuren.html">Kunststof deuren</a>
+            <a href="kunststof-schuifpuien.html">Schuifpuien</a>
+        </div>
+        <div class="footer-links">
+            <h5>Informatie</h5>
+            <a href="index.html">Home</a>
+            <a href="blog.html">Blog</a>
+            <a href="index.html#contact">3 Offertes vergelijken</a>
+        </div>
+        <div class="footer-contact">
+            <h5>Contact</h5>
+            <a href="tel:0546232066" class="footer-contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                0546-23 20 66
+            </a>
+            <a href="mailto:info@123kozijnenvergelijker.nl" class="footer-contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                info@123kozijnenvergelijker.nl
+            </a>
+            <div class="footer-contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Oldenzaal
+            </div>
+        </div>
+    </div>
+    
+<div class="footer-werkgebied">
+    <div class="container">
+        <p class="footer-werkgebied-titel">Werkgebied</p>
+        <div class="footer-werkgebied-steden">
+            <a href="kozijnen-amsterdam.html">Amsterdam</a>
+            <a href="kozijnen-rotterdam.html">Rotterdam</a>
+            <a href="kozijnen-den-haag.html">Den Haag</a>
+            <a href="kozijnen-utrecht.html">Utrecht</a>
+            <a href="kozijnen-eindhoven.html">Eindhoven</a>
+            <a href="kozijnen-tilburg.html">Tilburg</a>
+            <a href="kozijnen-groningen.html">Groningen</a>
+            <a href="kozijnen-almere.html">Almere</a>
+            <a href="kozijnen-breda.html">Breda</a>
+            <a href="kozijnen-nijmegen.html">Nijmegen</a>
+            <a href="kozijnen-enschede.html">Enschede</a>
+            <a href="kozijnen-haarlem.html">Haarlem</a>
+            <a href="kozijnen-arnhem.html">Arnhem</a>
+            <a href="kozijnen-zaandam.html">Zaandam</a>
+            <a href="kozijnen-amersfoort.html">Amersfoort</a>
+            <a href="kozijnen-apeldoorn.html">Apeldoorn</a>
+            <a href="kozijnen-den-bosch.html">Den Bosch</a>
+            <a href="kozijnen-hoofddorp.html">Hoofddorp</a>
+            <a href="kozijnen-maastricht.html">Maastricht</a>
+            <a href="kozijnen-leiden.html">Leiden</a>
+            <a href="kozijnen-dordrecht.html">Dordrecht</a>
+            <a href="kozijnen-zoetermeer.html">Zoetermeer</a>
+            <a href="kozijnen-zwolle.html">Zwolle</a>
+            <a href="kozijnen-deventer.html">Deventer</a>
+            <a href="kozijnen-delft.html">Delft</a>
+            <a href="kozijnen-alkmaar.html">Alkmaar</a>
+            <a href="kozijnen-heerlen.html">Heerlen</a>
+            <a href="kozijnen-venlo.html">Venlo</a>
+            <a href="kozijnen-leeuwarden.html">Leeuwarden</a>
+            <a href="kozijnen-emmen.html">Emmen</a>
+            <a href="kozijnen-almelo.html">Almelo</a>
+            <a href="kozijnen-oss.html">Oss</a>
+            <a href="kozijnen-hilversum.html">Hilversum</a>
+            <a href="kozijnen-hengelo.html">Hengelo</a>
+            <a href="kozijnen-roosendaal.html">Roosendaal</a>
+            <a href="kozijnen-purmerend.html">Purmerend</a>
+            <a href="kozijnen-schiedam.html">Schiedam</a>
+            <a href="kozijnen-helmond.html">Helmond</a>
+            <a href="kozijnen-lelystad.html">Lelystad</a>
+            <a href="kozijnen-ede.html">Ede</a>
+        </div>
+    </div>
+</div>
+<div class="footer-bottom">
+        <p>© 2026 123KozijnenVergelijker.nl · <a href="#">Privacyverklaring</a></p>
+    </div>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta">
+    <a href="#offerte-aanvragen" class="btn-primary btn-full">Vraag 3 offertes aan</a>
+</div>
+
+<script>
+// ===== HAMBURGER MENU =====
+(function() {
+    var btn = document.getElementById('hamburger');
+    var nav = document.getElementById('navLinks');
+    if (!btn || !nav) return;
+    btn.addEventListener('click', function() {
+        nav.classList.toggle('open');
+        btn.classList.toggle('open');
+    });
+})();
+</script>
+
+</body>
+</html>

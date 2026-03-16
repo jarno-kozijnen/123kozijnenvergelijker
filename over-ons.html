@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Over Ons | 123KozijnenVergelijker - Gecertificeerde Kozijnen</title>
+    <meta name="description" content="Leer ons kennen: 123KozijnenVergelijker helpt huiseigenaren bij het vergelijken van kozijnenoffertes. KOMO-gecertificeerd, 9.3/10 gemiddeld.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.123kozijnenvergelijker.nl/over-ons.html">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+    /* Over ons specifieke stijlen */
+    .over-hero {
+        background: linear-gradient(135deg, #0d3d1a 0%, #1E5C2F 100%);
+        padding: 80px 0 100px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .over-hero::before {
+        content: '';
+        position: absolute;
+        top: -60px; right: -60px;
+        width: 400px; height: 400px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.04);
+    }
+
+    .over-hero-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+    }
+
+    .over-hero-text .badge { margin-bottom: 20px; }
+
+    .over-hero-text h1 {
+        color: #fff;
+        font-size: clamp(30px, 4vw, 46px);
+        line-height: 1.15;
+        margin-bottom: 20px;
+    }
+
+    .over-hero-text h1 span { color: #FF6500; }
+
+    .over-hero-text p {
+        color: rgba(255,255,255,0.82);
+        font-size: 17px;
+        line-height: 1.7;
+        margin-bottom: 32px;
+    }
+
+    .over-hero-kaart {
+        background: rgba(255,255,255,0.07);
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 18px;
+        padding: 36px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+    }
+
+    .over-hero-stat strong {
+        display: block;
+        font-size: 36px;
+        font-weight: 800;
+        color: #fff;
+        line-height: 1;
+        margin-bottom: 6px;
+    }
+
+    .over-hero-stat strong span { color: #FF6500; }
+
+    .over-hero-stat p {
+        font-size: 13px;
+        color: rgba(255,255,255,0.65);
+        margin: 0;
+        line-height: 1.4;
+    }
+
+    /* Verhaal sectie */
+    .verhaal-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+    }
+
+    .verhaal-visual {
+        background: linear-gradient(135deg, #f0f7f2 0%, #e4f0e8 100%);
+        border-radius: 20px;
+        padding: 48px 40px;
+        position: relative;
+    }
+
+    .verhaal-quote {
+        font-size: 22px;
+        font-weight: 700;
+        color: #1E5C2F;
+        line-height: 1.4;
+        margin-bottom: 24px;
+        position: relative;
+    }
+
+    .verhaal-quote::before {
+        content: '"';
+        font-size: 80px;
+        color: #1E5C2F;
+        opacity: 0.15;
+        position: absolute;
+        top: -20px; left: -10px;
+        font-family: Georgia, serif;
+        line-height: 1;
+    }
+
+    .verhaal-auteur {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .verhaal-avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: #1E5C2F;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: 700;
+        font-size: 18px;
+        flex-shrink: 0;
+    }
+
+    .verhaal-auteur-naam { font-weight: 700; color: #1a1a1a; font-size: 15px; }
+    .verhaal-auteur-titel { font-size: 13px; color: #777; }
+
+    .verhaal-tekst h2 {
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    .verhaal-tekst p {
+        color: #555;
+        line-height: 1.75;
+        margin-bottom: 16px;
+        font-size: 16px;
+    }
+
+    /* Waarden */
+    .waarden-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-top: 48px;
+    }
+
+    .waarde-kaart {
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: 14px;
+        padding: 28px 24px;
+        text-align: center;
+        transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .waarde-kaart:hover {
+        box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        transform: translateY(-3px);
+    }
+
+    .waarde-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 14px;
+        background: #f0f7f2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 18px;
+    }
+
+    .waarde-icon svg { width: 26px; height: 26px; }
+
+    .waarde-kaart h3 {
+        font-size: 17px;
+        margin-bottom: 10px;
+        color: #1a1a1a;
+    }
+
+    .waarde-kaart p {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.65;
+        margin: 0;
+    }
+
+    /* Werkwijze tijdlijn */
+    .werkwijze-lijst {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        max-width: 720px;
+        margin: 48px auto 0;
+    }
+
+    .werkwijze-stap {
+        display: flex;
+        gap: 28px;
+        padding-bottom: 36px;
+        position: relative;
+    }
+
+    .werkwijze-stap:last-child { padding-bottom: 0; }
+
+    .werkwijze-stap::before {
+        content: '';
+        position: absolute;
+        left: 21px;
+        top: 48px;
+        bottom: 0;
+        width: 2px;
+        background: #e5e5e5;
+    }
+
+    .werkwijze-stap:last-child::before { display: none; }
+
+    .werkwijze-num {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: #1E5C2F;
+        color: #fff;
+        font-weight: 800;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 1;
+    }
+
+    .werkwijze-inhoud h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+        padding-top: 8px;
+    }
+
+    .werkwijze-inhoud p {
+        color: #666;
+        font-size: 15px;
+        line-height: 1.65;
+        margin: 0;
+    }
+
+    /* Vestigingen */
+    .vestigingen-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-top: 48px;
+    }
+
+    .vestiging-kaart {
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: 14px;
+        overflow: hidden;
+    }
+
+    .vestiging-header {
+        background: linear-gradient(135deg, #1E5C2F, #267a3d);
+        padding: 24px;
+        color: #fff;
+    }
+
+    .vestiging-header h3 { font-size: 20px; margin: 0 0 4px; }
+    .vestiging-header p { font-size: 13px; color: rgba(255,255,255,0.75); margin: 0; }
+
+    .vestiging-body {
+        padding: 20px 24px;
+    }
+
+    .vestiging-info {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        color: #555;
+    }
+
+    .vestiging-info svg { width: 16px; height: 16px; flex-shrink: 0; margin-top: 2px; color: #1E5C2F; }
+
+    /* CTA */
+    .over-cta {
+        background: linear-gradient(135deg, #FF6500, #e55a00);
+        padding: 64px 0;
+        text-align: center;
+    }
+
+    .over-cta h2 { color: #fff; margin-bottom: 14px; }
+    .over-cta p { color: rgba(255,255,255,0.88); font-size: 17px; margin-bottom: 32px; }
+
+    .over-cta-btns {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .btn-wit {
+        background: #fff;
+        color: #FF6500;
+        padding: 14px 28px;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 16px;
+        text-decoration: none;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-wit:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+
+    .btn-wit-outline {
+        background: transparent;
+        color: #fff;
+        padding: 14px 28px;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 16px;
+        text-decoration: none;
+        border: 2px solid rgba(255,255,255,0.6);
+        transition: border-color 0.2s, background 0.2s;
+    }
+
+    .btn-wit-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+        .over-hero-inner { grid-template-columns: 1fr; }
+        .over-hero-kaart { grid-template-columns: 1fr 1fr; }
+        .verhaal-inner { grid-template-columns: 1fr; gap: 40px; }
+        .waarden-grid { grid-template-columns: 1fr 1fr; }
+        .vestigingen-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+        .over-hero-kaart { grid-template-columns: 1fr 1fr; gap: 20px; }
+        .waarden-grid { grid-template-columns: 1fr; }
+    }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="container header-inner">
+        <div class="logo">
+            <a href="index.html" style="text-decoration:none;">
+                <span class="logo-123">123</span><span class="logo-kozijnen">kozijnen</span><span class="logo-verg">vergelijker</span><span class="logo-nl">.nl</span>
+            </a>
+        </div>
+        <nav class="nav" id="navLinks">
+            <a href="kunststof-kozijnen.html">Kozijnen</a>
+            <a href="kunststof-deuren.html">Deuren</a>
+            <a href="kunststof-schuifpuien.html">Schuifpuien</a>
+            <a href="projecten.html">Projecten</a>
+            <a href="financiering.html">Financiering</a>
+            <a href="over-ons.html" class="nav-actief">Over ons</a>
+            <a href="blog.html">Blog</a>
+            <a href="index.html#contact" class="btn-nav">3 Offertes vergelijken</a>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="Menu openen" onclick="document.getElementById('navLinks').classList.toggle('open');this.classList.toggle('open')">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="over-hero">
+    <div class="container over-hero-inner">
+        <div class="over-hero-text">
+            <span class="badge badge-groen">Over 123KozijnenVergelijker.nl</span>
+            <h1>Eerlijk vergelijken, <span>maximaal besparen</span></h1>
+            <p>Wij zijn opgericht met één doel: huiseigenaren helpen betere kozijnen te krijgen voor minder geld. Geen gedoe met meerdere bedrijven bellen. Wij regelen het voor je.</p>
+            <div style="display:flex;gap:14px;flex-wrap:wrap;">
+                <a href="index.html#contact" class="btn-primary">Gratis offertes aanvragen</a>
+                <a href="index.html#contact" class="btn-secondary">Neem contact op</a>
+            </div>
+        </div>
+        <div class="over-hero-kaart">
+            <div class="over-hero-stat">
+                <strong>523<span>+</span></strong>
+                <p>Tevreden huiseigenaren geholpen</p>
+            </div>
+            <div class="over-hero-stat">
+                <strong>9.<span>3</span></strong>
+                <p>Gemiddelde klantbeoordeling</p>
+            </div>
+            <div class="over-hero-stat">
+                <strong>20<span> jaar</span></strong>
+                <p>Garantie op alle kozijnen</p>
+            </div>
+            <div class="over-hero-stat">
+                <strong>3</strong>
+                <p>Locaties: 2 kantoren, 1 fabriek</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BREADCRUMB -->
+<div style="background:#f8faf8;border-bottom:1px solid #eee;">
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>›</span>
+            <span>Over ons</span>
+        </nav>
+    </div>
+</div>
+
+<!-- VERHAAL -->
+<section class="sectie sectie-licht">
+    <div class="container verhaal-inner">
+        <div class="verhaal-visual">
+            <p class="verhaal-quote">Iedereen verdient kwalitatieve kozijnen zonder te veel te betalen. Dat is waarom wij elke dag aan de slag gaan.</p>
+            <div class="verhaal-auteur">
+                <div class="verhaal-avatar">J</div>
+                <div>
+                    <div class="verhaal-auteur-naam">Jarno</div>
+                    <div class="verhaal-auteur-titel">Oprichter, 123KozijnenVergelijker.nl</div>
+                </div>
+            </div>
+
+            <div style="margin-top:32px;display:flex;flex-direction:column;gap:12px;">
+                <div style="display:flex;align-items:center;gap:12px;font-size:14px;color:#444;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#1E5C2F"/><path d="M7 12l3 3 6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    KOMO gecertificeerd installatienetwerk
+                </div>
+                <div style="display:flex;align-items:center;gap:12px;font-size:14px;color:#444;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#1E5C2F"/><path d="M7 12l3 3 6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Begeleiding bij Nationaal Warmtefonds aanvragen
+                </div>
+                <div style="display:flex;align-items:center;gap:12px;font-size:14px;color:#444;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#1E5C2F"/><path d="M7 12l3 3 6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Begeleiding bij ISDE-subsidieaanvragen
+                </div>
+                <div style="display:flex;align-items:center;gap:12px;font-size:14px;color:#444;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#1E5C2F"/><path d="M7 12l3 3 6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Vestigingen in Almelo, Haarlem en Bathmen
+                </div>
+            </div>
+        </div>
+
+        <div class="verhaal-tekst">
+            <span class="badge badge-groen">Ons verhaal</span>
+            <h2>Opgericht uit frustratie, gebouwd op eerlijkheid</h2>
+            <p>Wie nieuwe kozijnen wil, stuit op een wirwar van bedrijven, onduidelijke prijzen en technisch jargon. Kopers weten niet wat iets kost, wat ze nodig hebben of waar ze recht op hebben qua subsidie.</p>
+            <p>Dat kan beter. 123KozijnenVergelijker.nl brengt transparantie in de kozijnenmarkt. Wij bundelen aanbod van gecertificeerde installateurs, regelen offertes en begeleiden je bij financiering via het Nationaal Warmtefonds en subsidie via de ISDE-regeling.</p>
+            <p>We geven geen financieel advies. We loodsen je wel door het proces, zodat je nooit geld laat liggen en altijd een weloverwogen keuze maakt.</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top:8px;display:inline-block;">Start gratis vergelijken</a>
+        </div>
+    </div>
+</section>
+
+<!-- WAARDEN -->
+<section class="sectie" style="background:#f8faf8;">
+    <div class="container">
+        <div class="sectie-header">
+            <span class="badge badge-groen">Waar wij voor staan</span>
+            <h2>Onze kernwaarden</h2>
+            <p class="sectie-sub">Drie principes die alles bepalen wat wij doen.</p>
+        </div>
+        <div class="waarden-grid">
+            <div class="waarde-kaart">
+                <div class="waarde-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1E5C2F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <polyline points="8,12 11,15 16,9"/>
+                    </svg>
+                </div>
+                <h3>Eerlijkheid</h3>
+                <p>Geen verborgen kosten, geen vaag jargon. Wij leggen alles helder uit, ook als het antwoord is dat iets niet voor jou geschikt is.</p>
+            </div>
+            <div class="waarde-kaart">
+                <div class="waarde-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1E5C2F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12,6 12,12 16,14"/>
+                    </svg>
+                </div>
+                <h3>Snelheid</h3>
+                <p>Binnen 24 uur een offerte. Wij respecteren je tijd en zorgen dat je snel duidelijkheid hebt, zonder weken op een vakman te wachten.</p>
+            </div>
+            <div class="waarde-kaart">
+                <div class="waarde-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1E5C2F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </div>
+                <h3>Ontzorging</h3>
+                <p>Van offerte tot subsidiebegeleiding. Wij nemen de rompslomp uit handen zodat jij je kunt focussen op het eindresultaat: mooie, warme kozijnen.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HOE WE WERKEN -->
+<section class="sectie sectie-licht">
+    <div class="container">
+        <div class="sectie-header">
+            <span class="badge badge-groen">Onze werkwijze</span>
+            <h2>Van aanvraag tot installatie</h2>
+            <p class="sectie-sub">Wij begeleiden je van begin tot eind. Zo weet je precies waar je aan toe bent.</p>
+        </div>
+        <div class="werkwijze-lijst">
+            <div class="werkwijze-stap">
+                <div class="werkwijze-num">1</div>
+                <div class="werkwijze-inhoud">
+                    <h3>Jij vraagt gratis offertes aan</h3>
+                    <p>Via ons formulier geef je aan wat je zoekt: kozijnen, deuren, schuifpuien of een combinatie. We vragen je postcode, type woning en eventuele voorkeuren.</p>
+                </div>
+            </div>
+            <div class="werkwijze-stap">
+                <div class="werkwijze-num">2</div>
+                <div class="werkwijze-inhoud">
+                    <h3>Wij selecteren de beste installateurs</h3>
+                    <p>Uit ons netwerk van KOMO-gecertificeerde kozijnbedrijven koppelen wij je aan de meest geschikte partijen in jouw regio. Alleen bedrijven die onze kwaliteitscheck doorstaan.</p>
+                </div>
+            </div>
+            <div class="werkwijze-stap">
+                <div class="werkwijze-num">3</div>
+                <div class="werkwijze-inhoud">
+                    <h3>Je ontvangt offertes en vergelijkt</h3>
+                    <p>Binnen 24 uur ontvang je offertes. Wij helpen je bij het vergelijken: wat zit erin, wat niet, en wat is de echte prijs-kwaliteitverhouding.</p>
+                </div>
+            </div>
+            <div class="werkwijze-stap">
+                <div class="werkwijze-num">4</div>
+                <div class="werkwijze-inhoud">
+                    <h3>Wij regelen subsidie en financiering</h3>
+                    <p>Heb je recht op ISDE-subsidie? Of wil je via het Nationaal Warmtefonds renteloos lenen? Wij begeleiden de aanvraag zodat je niets misloopt.</p>
+                </div>
+            </div>
+            <div class="werkwijze-stap">
+                <div class="werkwijze-num">5</div>
+                <div class="werkwijze-inhoud">
+                    <h3>De kozijnen worden geplaatst</h3>
+                    <p>De installateur komt op een moment dat jou past. Na plaatsing ontvang je 20 jaar garantie op de kozijnen en bescherm je je woning voor de lange termijn.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VESTIGINGEN -->
+<section class="sectie" style="background:#f8faf8;">
+    <div class="container">
+        <div class="sectie-header">
+            <span class="badge badge-groen">Onze locaties</span>
+            <h2>Actief in heel Nederland</h2>
+            <p class="sectie-sub">Met drie vestigingen bedienen wij huiseigenaren van Haarlem tot Twente.</p>
+        </div>
+        <div class="vestigingen-grid">
+            <div class="vestiging-kaart">
+                <div class="vestiging-header">
+                    <h3>Almelo</h3>
+                    <p>Hoofdvestiging Twente</p>
+                </div>
+                <div class="vestiging-body">
+                    <div class="vestiging-info">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Almelo, Overijssel
+                    </div>
+                    <div class="vestiging-info">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        <a href="tel:0546232066" style="color:#555;text-decoration:none;">0546-23 20 66</a>
+                    </div>
+                    <div class="vestiging-info">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        info@123kozijnenvergelijker.nl
+                    </div>
+                    <div class="vestiging-info" style="margin-top:8px;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+                        Ma t/m vr 08:00 tot 17:30
+                    </div>
+                </div>
+            </div>
+
+            <div class="vestiging-kaart">
+                <div class="vestiging-header">
+                    <h3>Haarlem</h3>
+                    <p>Vestiging Noord-Holland</p>
+                </div>
+                <div class="vestiging-body">
+                    <div class="vestiging-info">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Haarlem, Noord-Holland
+                    </div>
+                    <div class="vestiging-info">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        <a href="tel:0546232066" style="color:#555;text-decoration:none;">0546-23 20 66</a>
+                    </div>
+                    <div class="vestiging-info">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        info@123kozijnenvergelijker.nl
+                    </div>
+                    <div class="vestiging-info" style="margin-top:8px;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+                        Ma t/m vr 08:00 tot 17:30
+                    </div>
+                </div>
+            </div>
+
+            <div class="vestiging-kaart">
+                <div class="vestiging-header">
+                    <h3>Bathmen</h3>
+                    <p>Vestiging Salland</p>
+                </div>
+                <div class="vestiging-body">
+                    <div class="vestiging-info">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Bathmen, Overijssel
+                    </div>
+                    <div class="vestiging-info">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        <a href="tel:0546232066" style="color:#555;text-decoration:none;">0546-23 20 66</a>
+                    </div>
+                    <div class="vestiging-info">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        info@123kozijnenvergelijker.nl
+                    </div>
+                    <div class="vestiging-info" style="margin-top:8px;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+                        Ma t/m vr 08:00 tot 17:30
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="over-cta">
+    <div class="container">
+        <h2>Klaar om te starten?</h2>
+        <p>Vraag gratis offertes aan en ontdek hoeveel jij kunt besparen. Inclusief subsidie- en financieringsbegeleiding.</p>
+        <div class="over-cta-btns">
+            <a href="index.html#contact" class="btn-wit">Gratis offertes aanvragen</a>
+            <a href="financiering.html" class="btn-wit-outline">Meer over financiering</a>
+        </div>
+    </div>
+</section>
+
+<!-- LOGO SLIDER -->
+<div class="logo-slider-sectie">
+    <p class="logo-slider-label">Wij werken met gerenommeerde merken en organisaties</p>
+    <div class="logo-slider-wrap">
+        <div class="logo-slider-track">
+            <div class="logo-slide"><img src="images/veka.png" alt="VEKA" loading="lazy"></div>
+            <div class="logo-slide"><img src="images/schuco.svg" alt="Schüco" loading="lazy"></div>
+            <div class="logo-slide"><img src="images/svn.svg" alt="SVN" loading="lazy"></div>
+            <div class="logo-slide"><img src="images/nationaal warmtefonds.svg" alt="Nationaal Warmtefonds" loading="lazy"></div>
+            <div class="logo-slide"><img src="images/milieu centraal.svg" alt="Milieu Centraal" loading="lazy"></div>
+            <div class="logo-slide"><img src="images/veka.png" alt="VEKA" loading="lazy"></div>
+            <div class="logo-slide"><img src="images/schuco.svg" alt="Schüco" loading="lazy"></div>
+            <div class="logo-slide"><img src="images/svn.svg" alt="SVN" loading="lazy"></div>
+            <div class="logo-slide"><img src="images/nationaal warmtefonds.svg" alt="Nationaal Warmtefonds" loading="lazy"></div>
+            <div class="logo-slide"><img src="images/milieu centraal.svg" alt="Milieu Centraal" loading="lazy"></div>
+        </div>
+    </div>
+</div>
+
+<div class="trust-balk">
+    <div class="container trust-balk-inner">
+        <div class="trust-cert">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#FF6500" stroke-width="1.8" stroke-linecap="round" width="28" height="28"><path d="M12 2L3 6v6c0 5 4 9.5 9 11 5-1.5 9-6 9-11V6L12 2z"/><polyline points="8,12 11,15 16,9"/></svg>
+            <div><strong>KOMO gecertificeerd</strong><br>Kwaliteitskeurmerk</div>
+        </div>
+        <div class="trust-cert">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#FF6500" stroke-width="1.8" stroke-linecap="round" width="28" height="28"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+            <div><strong>SKG** gecertificeerd</strong><br>Inbraakwering RC2</div>
+        </div>
+        <div class="trust-cert">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#FF6500" stroke-width="1.8" stroke-linecap="round" width="28" height="28"><circle cx="12" cy="12" r="9"/><polyline points="8,12 11,15 16,9"/></svg>
+            <div><strong>20 jaar garantie</strong><br>Op al onze kozijnen</div>
+        </div>
+        <div class="trust-cert">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#FF6500" stroke-width="1.8" stroke-linecap="round" width="28" height="28"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            <div><strong>VEKA profielen</strong><br>Premium kwaliteit</div>
+        </div>
+        <div class="trust-cert">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#FF6500" stroke-width="1.8" stroke-linecap="round" width="28" height="28"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <div><strong>523 huishoudens</strong><br>Gemiddeld 9.3</div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container footer-inner">
+        <div class="footer-logo">
+            <span class="logo-123">123</span><span class="logo-kozijnen">kozijnen</span><span class="logo-verg">vergelijker</span><span class="logo-nl">.nl</span>
+            <p>Kozijnen vergelijken & laten plaatsen<br>Oldenzaal</p>
+        </div>
+        <div class="footer-links">
+            <h5>Producten</h5>
+            <a href="kunststof-kozijnen.html">Kunststof kozijnen</a>
+            <a href="kunststof-deuren.html">Kunststof deuren</a>
+            <a href="kunststof-schuifpuien.html">Schuifpuien</a>
+        </div>
+        <div class="footer-links">
+            <h5>Informatie</h5>
+            <a href="over-ons.html">Over ons</a>
+            <a href="projecten.html">Projecten</a>
+            <a href="index.html#subsidie">Subsidie</a>
+            <a href="financiering.html">Financiering</a>
+        </div>
+        <div class="footer-contact">
+            <h5>Contact</h5>
+            <a href="tel:0546232066" class="footer-contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                0546-23 20 66
+            </a>
+            <a href="mailto:info@123kozijnenvergelijker.nl" class="footer-contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                info@123kozijnenvergelijker.nl
+            </a>
+            <div class="footer-contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Oldenzaal
+            </div>
+        </div>
+    </div>
+    
+<div class="footer-werkgebied">
+    <div class="container">
+        <p class="footer-werkgebied-titel">Werkgebied</p>
+        <div class="footer-werkgebied-steden">
+            <a href="kozijnen-amsterdam.html">Amsterdam</a>
+            <a href="kozijnen-rotterdam.html">Rotterdam</a>
+            <a href="kozijnen-den-haag.html">Den Haag</a>
+            <a href="kozijnen-utrecht.html">Utrecht</a>
+            <a href="kozijnen-eindhoven.html">Eindhoven</a>
+            <a href="kozijnen-tilburg.html">Tilburg</a>
+            <a href="kozijnen-groningen.html">Groningen</a>
+            <a href="kozijnen-almere.html">Almere</a>
+            <a href="kozijnen-breda.html">Breda</a>
+            <a href="kozijnen-nijmegen.html">Nijmegen</a>
+            <a href="kozijnen-enschede.html">Enschede</a>
+            <a href="kozijnen-haarlem.html">Haarlem</a>
+            <a href="kozijnen-arnhem.html">Arnhem</a>
+            <a href="kozijnen-zaandam.html">Zaandam</a>
+            <a href="kozijnen-amersfoort.html">Amersfoort</a>
+            <a href="kozijnen-apeldoorn.html">Apeldoorn</a>
+            <a href="kozijnen-den-bosch.html">Den Bosch</a>
+            <a href="kozijnen-hoofddorp.html">Hoofddorp</a>
+            <a href="kozijnen-maastricht.html">Maastricht</a>
+            <a href="kozijnen-leiden.html">Leiden</a>
+            <a href="kozijnen-dordrecht.html">Dordrecht</a>
+            <a href="kozijnen-zoetermeer.html">Zoetermeer</a>
+            <a href="kozijnen-zwolle.html">Zwolle</a>
+            <a href="kozijnen-deventer.html">Deventer</a>
+            <a href="kozijnen-delft.html">Delft</a>
+            <a href="kozijnen-alkmaar.html">Alkmaar</a>
+            <a href="kozijnen-heerlen.html">Heerlen</a>
+            <a href="kozijnen-venlo.html">Venlo</a>
+            <a href="kozijnen-leeuwarden.html">Leeuwarden</a>
+            <a href="kozijnen-emmen.html">Emmen</a>
+            <a href="kozijnen-almelo.html">Almelo</a>
+            <a href="kozijnen-oss.html">Oss</a>
+            <a href="kozijnen-hilversum.html">Hilversum</a>
+            <a href="kozijnen-hengelo.html">Hengelo</a>
+            <a href="kozijnen-roosendaal.html">Roosendaal</a>
+            <a href="kozijnen-purmerend.html">Purmerend</a>
+            <a href="kozijnen-schiedam.html">Schiedam</a>
+            <a href="kozijnen-helmond.html">Helmond</a>
+            <a href="kozijnen-lelystad.html">Lelystad</a>
+            <a href="kozijnen-ede.html">Ede</a>
+        </div>
+    </div>
+</div>
+<div class="footer-bottom">
+        <p>© 2026 123KozijnenVergelijker.nl · <a href="privacyverklaring.html">Privacyverklaring</a> · <a href="algemene-voorwaarden.html">Algemene voorwaarden</a></p>
+    </div>
+</footer>
+
+</body>
+</html>

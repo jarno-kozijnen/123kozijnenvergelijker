@@ -1,0 +1,64 @@
+{
+  "projecten": [
+    {
+      "titel": "Volledig nieuwe kozijnen – tussenwoning",
+      "locatie": "Almelo",
+      "categorie": "kozijnen",
+      "tags": ["12 kozijnen", "HR++ glas", "Antraciet", "2 dagen"],
+      "foto": "",
+      "review": "Alles netjes gedaan in twee dagen. Woning ziet er geweldig uit en is een stuk warmer!",
+      "klant": "Jan de Vries, Almelo",
+      "sterren": "5"
+    },
+    {
+      "titel": "Parallelschuifpui – vrijstaande woning",
+      "locatie": "Enschede",
+      "categorie": "schuifpuien",
+      "tags": ["4,8m breedte", "HR++ glas", "Crème wit", "1 dag"],
+      "foto": "",
+      "review": "Prachtig resultaat. De tuin voelt nu écht als verlengde van de woonkamer. Top service!",
+      "klant": "Sandra Bosman, Enschede",
+      "sterren": "5"
+    },
+    {
+      "titel": "Volledige gevelrenovatie – 2-onder-1-kap",
+      "locatie": "Hengelo",
+      "categorie": "compleet",
+      "tags": ["16 kozijnen", "2 deuren", "Schuifpui", "3 dagen"],
+      "foto": "",
+      "review": "Complete transformatie in 3 dagen. Echt een nieuwe woning! Aanrader voor iedereen.",
+      "klant": "Peter Bakker, Hengelo",
+      "sterren": "5"
+    },
+    {
+      "titel": "Moderne kunststof voordeur – rijwoning",
+      "locatie": "Almelo",
+      "categorie": "deuren",
+      "tags": ["RC2 beslag", "Antraciet", "Met glas panel", "3 uur"],
+      "foto": "",
+      "review": "Binnen 3 uur een compleet nieuwe voordeur. Ziet er strak uit en sluit perfect.",
+      "klant": "Maria Hendriks, Almelo",
+      "sterren": "5"
+    },
+    {
+      "titel": "Slaapkamer + woonkamer kozijnen",
+      "locatie": "Zwolle",
+      "categorie": "kozijnen",
+      "tags": ["6 kozijnen", "HR+++ glas", "Wit", "1 dag"],
+      "foto": "",
+      "review": "Huis veel stiller en warmer. Energierekening al zichtbaar lager na eerste maand.",
+      "klant": "Tom van der Berg, Zwolle",
+      "sterren": "5"
+    },
+    {
+      "titel": "Enkel naar HR++ – hele woning",
+      "locatie": "Deventer",
+      "categorie": "compleet",
+      "tags": ["14 kozijnen", "Voordeur", "Houtlook", "2 dagen"],
+      "foto": "",
+      "review": "Van enkel glas naar HR++. Woning scoort nu label B. Subsidie aangevraagd met hulp van 123KozijnenVergelijker.",
+      "klant": "Els Smit, Deventer",
+      "sterren": "5"
+    }
+  ]
+}

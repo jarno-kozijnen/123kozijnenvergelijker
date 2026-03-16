@@ -1,0 +1,28 @@
+{
+  "vestigingen": [
+    {
+      "stad": "Almelo",
+      "straat": "Windmolen 12",
+      "postcode_stad": "7609 NN, Almelo",
+      "openingstijden": "Ma - Vrij: 08:00 - 17:00",
+      "telefoon": "0546-23 20 66",
+      "email": "info@123kozijnenvergelijker.nl"
+    },
+    {
+      "stad": "Haarlem",
+      "straat": "Hendrik Figeeweg 1E",
+      "postcode_stad": "2031 BJ, Haarlem",
+      "openingstijden": "Ma - Vrij: 08:00 - 17:00",
+      "telefoon": "023-303 43 10",
+      "email": "info@123kozijnenvergelijker.nl"
+    },
+    {
+      "stad": "Bathmen",
+      "straat": "Brink 10a",
+      "postcode_stad": "7437 AM, Bathmen",
+      "openingstijden": "Ma - Vrij: 08:00 - 17:00",
+      "telefoon": "0546-23 20 66",
+      "email": "info@123kozijnenvergelijker.nl"
+    }
+  ]
+}

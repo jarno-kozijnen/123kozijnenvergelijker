@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kozijnen Blog & Kennisbank | Tips, Kosten & Subsidie Uitleg</title>
+    <meta name="description" content="Lees alles over kunststof kozijnen: kosten, subsidies, onderhoud en plaatsing. Onze kennisbank helpt je de juiste keuze te maken.">
+    <link rel="canonical" href="https://123kozijnenvergelijker.nl/blog.html">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="blog.css">
+    <style>
+        .blog-overview-wrap { padding: 60px 0 80px; background: #f8faf8; }
+        .blog-overview-header { text-align: center; margin-bottom: 48px; }
+        .blog-overview-header h1 { font-size: 40px; font-weight: 800; color: #1E5C2F; margin-bottom: 12px; }
+        .blog-overview-header p { color: #666; font-size: 17px; }
+        .blog-filter { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 48px; }
+        .filter-btn { padding: 8px 20px; border-radius: 20px; border: 2px solid #1E5C2F; background: transparent; color: #1E5C2F; font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+        .filter-btn:hover, .filter-btn.active { background: #1E5C2F; color: #fff; }
+        .blog-overview-layout { display: grid; grid-template-columns: 1fr 300px; gap: 48px; align-items: start; }
+        .blog-featured { display: block; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin-bottom: 36px; transition: transform 0.2s; border-left: 5px solid #1E5C2F; text-decoration: none; color: inherit; }
+        .blog-featured:hover { transform: translateY(-3px); }
+        .blog-featured-body { padding: 32px 36px; display: flex; flex-direction: column; }
+        .blog-featured-body h2 { font-size: 24px; font-weight: 800; color: #1a1a1a; line-height: 1.3; margin-bottom: 12px; text-align: left; }
+        .blog-featured-body p { color: #666; font-size: 15px; margin-bottom: 20px; }
+        .blog-featured-meta { font-size: 13px; color: #aaa; margin-bottom: 8px; }
+        .blog-articles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .blog-card { background: #fff; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); transition: transform 0.2s, box-shadow 0.2s; border-top: 3px solid #1E5C2F; overflow: hidden; }
+        .blog-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(30,92,47,0.12); }
+        .blog-card-body { padding: 22px 24px; }
+        .blog-card-meta { font-size: 12px; color: #aaa; margin-bottom: 8px; }
+        .blog-card-body h3 { font-size: 16px; font-weight: 700; color: #1a1a1a; line-height: 1.35; margin-bottom: 8px; }
+        .blog-card-body p { font-size: 14px; color: #666; line-height: 1.55; margin-bottom: 14px; }
+        .blog-lees-meer { font-size: 13px; color: #1E5C2F; font-weight: 700; text-decoration: none; }
+        .blog-pagination { display: flex; justify-content: center; gap: 8px; margin-top: 48px; }
+        .page-btn { width: 40px; height: 40px; border-radius: 6px; border: 2px solid #e8e8e8; background: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; color: #333; transition: all 0.2s; }
+        .page-btn:hover, .page-btn.active { background: #1E5C2F; border-color: #1E5C2F; color: #fff; }
+        .blog-hero-cta { background: #1E5C2F; color: #fff; border-radius: 12px; padding: 32px 36px; margin-bottom: 40px; text-align: center; }
+        .blog-hero-cta h2 { font-size: 22px; font-weight: 800; margin-bottom: 10px; color: #fff; }
+        .blog-hero-cta p { color: rgba(255,255,255,0.85); margin-bottom: 20px; font-size: 15px; }
+        @media (max-width: 900px) { .blog-overview-layout { grid-template-columns: 1fr; } }
+        @media (max-width: 600px) { .blog-articles-grid { grid-template-columns: 1fr; } .blog-overview-header h1 { font-size: 28px; } }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="container header-inner">
+        <div class="logo">
+            <a href="index.html">
+                <span class="logo-123">123</span><span class="logo-kozijnen">kozijnen</span><span class="logo-verg">vergelijker</span><span class="logo-nl">.nl</span>
+            </a>
+        </div>
+        <nav class="nav" id="navLinks">
+            <a href="index.html#producten">Producten</a>
+            <a href="index.html#voordelen">Voordelen</a>
+            <a href="blog.html" style="color:#fff;font-weight:700;">Blog</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="index.html#contact" class="btn-nav">Gratis offerte</a>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="Menu openen" onclick="document.getElementById('navLinks').classList.toggle('open');this.classList.toggle('open')">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+
+<div class="blog-overview-wrap">
+    <div class="container">
+
+        <div class="blog-overview-header">
+            <h1>Kennisbank &amp; Blog</h1>
+            <p>Alles over kunststof kozijnen, verduurzamen en energiebesparing &mdash; 42 artikelen</p>
+        </div>
+
+        <!-- CTA Banner -->
+        <div class="blog-hero-cta">
+            <h2>Klaar om offertes te vergelijken?</h2>
+            <p>Ontvang gratis 3 offertes van gecertificeerde installateurs bij jou in de buurt.</p>
+            <a href="index.html#contact" class="btn-primary" style="background:#FF6500;border-color:#FF6500;">Vraag 3 gratis offertes aan</a>
+        </div>
+
+        <!-- Categoriefilter -->
+        <div class="blog-filter">
+            <button class="filter-btn active">Alle artikelen</button>
+            <button class="filter-btn">Kozijnen</button>
+            <button class="filter-btn">Deuren</button>
+            <button class="filter-btn">Schuifpuien</button>
+            <button class="filter-btn">Verduurzamen</button>
+            <button class="filter-btn">Tips</button>
+            <button class="filter-btn">Subsidie</button>
+        </div>
+
+        <div class="blog-overview-layout">
+
+            <!-- MAIN -->
+            <div>
+
+                <!-- Uitgelicht -->
+
+                <a href="kunststof-kozijnen-vervangen-kosten-opbrengst.html" class="blog-featured blog-featured-noimg" data-cat="Kozijnen">
+                    <div class="blog-featured-body">
+                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+                            <span class="blog-cat-tag">Kozijnen</span>
+                            <span style="background:#FF6500;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:12px;">Uitgelicht</span>
+                        </div>
+                        <p class="blog-featured-meta">8 maart 2026 &middot; 8 min leestijd</p>
+                        <h2>Kunststof kozijnen vervangen: kosten en opbrengst</h2>
+                        <p>Wat kost het om kunststof kozijnen te vervangen en wat levert het op? Alles over prijzen, isolatie en terugverdientijd.</p>
+                        <span class="blog-lees-meer">Lees meer &rarr;</span>
+                    </div>
+                </a>
+
+                <!-- Artikelen grid -->
+                <div class="blog-articles-grid">
+
+                    <a href="kozijnen-vervangen-monumentaal-pand.html" class="blog-card" data-cat="Kozijnen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Kozijnen</span>
+                            <p class="blog-card-meta">6 maart 2026 &middot; 8 min</p>
+                            <h3>Kozijnen vervangen bij monument: mag dat en hoe?</h3>
+                            <p>Kozijnen vervangen bij een monument is mogelijk, maar vraagt om extra stappen. Lees hier wat wel en niet mag.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="hr-plus-plus-glas-kunststof-kozijnen-verschil-standaard-glas.html" class="blog-card" data-cat="Verduurzamen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Verduurzamen</span>
+                            <p class="blog-card-meta">4 maart 2026 &middot; 9 min</p>
+                            <h3>HR++ glas bij kunststof kozijnen: wat is het verschil?</h3>
+                            <p>HR++ glas is de standaard bij moderne kunststof kozijnen. Maar wat maakt het nou echt anders dan gewoon dubbelglas?</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="kunststof-kozijnen-vs-houten-kozijnen.html" class="blog-card" data-cat="Kozijnen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Kozijnen</span>
+                            <p class="blog-card-meta">3 maart 2026 &middot; 8 min</p>
+                            <h3>Kunststof vs houten kozijnen: wat is de beste keuze?</h3>
+                            <p>Kunststof of hout? We leggen eerlijk uit wat beide opties kosten, hoe ze presteren en welke keuze bij jouw woning past.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="keurmerkcertificaat-kozijnen.html" class="blog-card" data-cat="Kozijnen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Kozijnen</span>
+                            <p class="blog-card-meta">2 maart 2026 &middot; 8 min</p>
+                            <h3>Keurmerkcertificaat kozijnen: wat is het en waarom telt het?</h3>
+                            <p>Wat zegt een keurmerkcertificaat over kozijnen? En waarom zou je er als huiseigenaar iets mee moeten? Hier lees je het.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="kozijnen-vervangen-zonder-bouwvergunning.html" class="blog-card" data-cat="Kozijnen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Kozijnen</span>
+                            <p class="blog-card-meta">28 februari 2026 &middot; 7 min</p>
+                            <h3>Kozijnen vervangen zonder vergunning: wanneer mag dat?</h3>
+                            <p>Wanneer mag je kozijnen vervangen zonder vergunning? Lees de regels, uitzonderingen en waar je op moet letten.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="kunststof-kozijnen-met-roede.html" class="blog-card" data-cat="Kozijnen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Kozijnen</span>
+                            <p class="blog-card-meta">27 februari 2026 &middot; 8 min</p>
+                            <h3>Kunststof kozijnen met roede: klassieke look, modern comfort</h3>
+                            <p>Kunststof kozijnen met roede combineren een tijdloze uitstraling met moderne isolatie. Alles wat je moet weten over roedes, kosten en onderhoud.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="subsidie-kunststof-kozijnen-2026.html" class="blog-card" data-cat="Subsidie" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Subsidie</span>
+                            <p class="blog-card-meta">27 februari 2026 &middot; 8 min</p>
+                            <h3>Subsidie kunststof kozijnen 2026: zo vraag je het aan</h3>
+                            <p>Welke subsidie kun je in 2026 aanvragen voor kunststof kozijnen? Alles wat je moet weten over regelingen, bedragen en hoe je het aanpakt.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="kozijnen-buiten-of-binnen-monteren.html" class="blog-card" data-cat="Kozijnen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Kozijnen</span>
+                            <p class="blog-card-meta">25 februari 2026 &middot; 9 min</p>
+                            <h3>Kozijnen buiten of binnen monteren: wat is het verschil?</h3>
+                            <p>Buitenmontage of binnenmontage bij kozijnen: we leggen uit wat het verschil is en wat het beste werkt voor jouw situatie.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="hoe-lang-gaan-kunststof-kozijnen-mee.html" class="blog-card" data-cat="Kozijnen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Kozijnen</span>
+                            <p class="blog-card-meta">24 februari 2026 &middot; 8 min</p>
+                            <h3>Hoe lang gaan kunststof kozijnen mee? (Eerlijk antwoord)</h3>
+                            <p>Kunststof kozijnen gaan gemiddeld 40 tot 50 jaar mee. Lees wat de levensduur bepaalt en wanneer je aan vervanging moet denken.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="prijs-kunststof-kozijnen-berekend.html" class="blog-card" data-cat="Kozijnen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Kozijnen</span>
+                            <p class="blog-card-meta">23 februari 2026 &middot; 7 min</p>
+                            <h3>Prijs kunststof kozijnen berekend: zo werkt het</h3>
+                            <p>Wat bepaalt de prijs van kunststof kozijnen? We leggen alle factoren uit, van maatwerk tot glas en montage.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="kunststof-kozijnen-onderhouden.html" class="blog-card" data-cat="Tips" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Tips</span>
+                            <p class="blog-card-meta">23 februari 2026 &middot; 8 min</p>
+                            <h3>Kunststof kozijnen onderhouden: zo doe je dat goed</h3>
+                            <p>Kunststof kozijnen onderhouden hoeft nauwelijks tijd te kosten. Met deze tips blijven ze er jaren als nieuw uitzien.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="kunststof-kozijnen-antraciet.html" class="blog-card" data-cat="Kozijnen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Kozijnen</span>
+                            <p class="blog-card-meta">22 februari 2026 &middot; 7 min</p>
+                            <h3>Kunststof kozijnen in antraciet: stijlvol én populair</h3>
+                            <p>Antraciet kozijnen zijn populairder dan ooit. Lees waarom, wat het kost en hoe je slim offertes vergelijkt.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="kozijnen-isoleren-vs-vervangen.html" class="blog-card" data-cat="Kozijnen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Kozijnen</span>
+                            <p class="blog-card-meta">21 februari 2026 &middot; 7 min</p>
+                            <h3>Kozijnen isoleren of vervangen: wat is slimmer?</h3>
+                            <p>Twijfel je tussen kozijnen isoleren of vervangen? Wij leggen uit wat slimmer is voor jouw situatie.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="isolatiewaarde-kunststof-kozijnen.html" class="blog-card" data-cat="Verduurzamen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Verduurzamen</span>
+                            <p class="blog-card-meta">21 februari 2026 &middot; 8 min</p>
+                            <h3>Isolatiewaarde kunststof kozijnen: wat mag je verwachten?</h3>
+                            <p>Ontdek wat de isolatiewaarde van kunststof kozijnen inhoudt, wat HR++ glas doet en hoeveel je kunt besparen op je energierekening.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="kunststof-kozijnen-gelderland.html" class="blog-card" data-cat="Kozijnen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Kozijnen</span>
+                            <p class="blog-card-meta">17 februari 2026 &middot; 7 min</p>
+                            <h3>Kunststof kozijnen in Gelderland: regionale voordelen</h3>
+                            <p>Alles wat je moet weten over kunststof kozijnen in Gelderland: kosten, voordelen en hoe je de beste installateur vindt.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="kunststof-kozijnen-jaren-30-woning.html" class="blog-card" data-cat="Kozijnen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Kozijnen</span>
+                            <p class="blog-card-meta">17 februari 2026 &middot; 7 min</p>
+                            <h3>Kunststof kozijnen jaren 30 woning: past dat wel?</h3>
+                            <p>Passen kunststof kozijnen bij een jaren 30 woning? Ja, als je het slim aanpakt. Lees hoe het werkt.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="dakkapel-kozijnen-kunststof-mogelijkheden-kosten.html" class="blog-card" data-cat="Kozijnen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Kozijnen</span>
+                            <p class="blog-card-meta">12 februari 2026 &middot; 9 min</p>
+                            <h3>Dakkapel kozijnen in kunststof: mogelijkheden en kosten</h3>
+                            <p>Kunststof kozijnen voor je dakkapel: ontdek de mogelijkheden, typische kosten en praktische tips voor jouw situatie.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="inbraakwerende-kozijnen-veiligheid-kunststof.html" class="blog-card" data-cat="Kozijnen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Kozijnen</span>
+                            <p class="blog-card-meta">12 februari 2026 &middot; 8 min</p>
+                            <h3>Inbraakwerende kozijnen: hoe veilig zijn kunststof kozijnen?</h3>
+                            <p>Hoe veilig zijn kunststof kozijnen eigenlijk? Alles over inbraakwerendheid, sluitingen en veiligheidsglas uitgelegd.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="kozijnen-vervangen-en-kamerthermostaat-besparing.html" class="blog-card" data-cat="Kozijnen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Kozijnen</span>
+                            <p class="blog-card-meta">10 februari 2026 &middot; 8 min</p>
+                            <h3>Kozijnen vervangen en thermostaat: bespaar je echt meer?</h3>
+                            <p>Nieuwe kozijnen of een slimme thermostaat: wat levert meer op? En wat als je beide combineert?</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="kunststof-kozijnen-op-maat-laten-maken.html" class="blog-card" data-cat="Tips" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Tips</span>
+                            <p class="blog-card-meta">10 februari 2026 &middot; 7 min</p>
+                            <h3>Kunststof kozijnen op maat: zo werkt het van A tot Z</h3>
+                            <p>Alles over het laten maken van kunststof kozijnen op maat: van opmeten tot plaatsen. Praktisch en eerlijk uitgelegd.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="draai-kiepramen-kunststof-kozijnen-werking-kosten.html" class="blog-card" data-cat="Kozijnen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Kozijnen</span>
+                            <p class="blog-card-meta">6 februari 2026 &middot; 8 min</p>
+                            <h3>Draai-kiepramen in kunststof kozijnen: werking en kosten</h3>
+                            <p>Draai-kiepramen zijn de populairste keuze bij nieuwe kunststof kozijnen. Maar hoe werken ze en wat kost het?</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="triple-glas-kunststof-kozijnen-meerprijs-waard.html" class="blog-card" data-cat="Verduurzamen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Verduurzamen</span>
+                            <p class="blog-card-meta">6 februari 2026 &middot; 8 min</p>
+                            <h3>Triple glas in kunststof kozijnen: is het de meerprijs waard?</h3>
+                            <p>Triple glas klinkt als het slimste wat je kunt doen. Maar is dat ook zo? We leggen het eerlijk uit.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="kunststof-schuifpui-alternatief-openslaande-deur.html" class="blog-card" data-cat="Deuren" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Deuren</span>
+                            <p class="blog-card-meta">1 februari 2026 &middot; 8 min</p>
+                            <h3>Kunststof schuifpui: slim alternatief voor de openslaande deur</h3>
+                            <p>Een kunststof schuifpui biedt meer ruimte en licht dan een openslaande deur. Lees wat het kost en waar je op moet letten.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="kunststof-kozijnen-vve-collectief-aanpakken.html" class="blog-card" data-cat="Kozijnen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Kozijnen</span>
+                            <p class="blog-card-meta">1 februari 2026 &middot; 8 min</p>
+                            <h3>Kunststof kozijnen voor VvE: collectief aanpakken in 2025</h3>
+                            <p>Kozijnen vervangen als VvE is complex maar loont. Lees hoe je het collectief aanpakt en flink bespaart op kosten.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="kozijnen-geintegreerde-rolluiken-voor-en-nadelen.html" class="blog-card" data-cat="Kozijnen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Kozijnen</span>
+                            <p class="blog-card-meta">28 januari 2026 &middot; 8 min</p>
+                            <h3>Kozijnen met geïntegreerde rolluiken: voor- en nadelen</h3>
+                            <p>Kozijnen met geïntegreerde rolluiken bieden extra comfort en beveiliging, maar er kleven ook nadelen aan. Lees wat je moet weten.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="beste-kozijnenmerken-nederland.html" class="blog-card" data-cat="Kozijnen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Kozijnen</span>
+                            <p class="blog-card-meta">27 januari 2026 &middot; 7 min</p>
+                            <h3>Beste kozijnenmerken in Nederland: welk merk kies jij?</h3>
+                            <p>Welk kozijnenmerk is de beste keuze voor jouw huis? We vergelijken de topmerken op kwaliteit, prijs en garantie.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="kozijnen-vervangen-winter.html" class="blog-card" data-cat="Kozijnen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Kozijnen</span>
+                            <p class="blog-card-meta">23 januari 2026 &middot; 7 min</p>
+                            <h3>Kozijnen vervangen in de winter: kan dat gewoon?</h3>
+                            <p>Kozijnen vervangen in de winter: het kan gewoon. Ontdek de voor- en nadelen en wat je moet weten voordat je begint.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="geluidsisolatie-kunststof-kozijnen-db-winst.html" class="blog-card" data-cat="Verduurzamen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Verduurzamen</span>
+                            <p class="blog-card-meta">21 januari 2026 &middot; 8 min</p>
+                            <h3>Geluidsisolatie en kunststof kozijnen: hoeveel dB win je?</h3>
+                            <p>Hoeveel stiller wordt jouw huis met nieuwe kozijnen? We leggen uit wat je kunt verwachten qua decibel-winst.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="kunststof-kozijnen-wit-of-gekleurd.html" class="blog-card" data-cat="Tips" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Tips</span>
+                            <p class="blog-card-meta">18 januari 2026 &middot; 8 min</p>
+                            <h3>Kunststof kozijnen wit of gekleurd: voor- en nadelen</h3>
+                            <p>Wit of toch antraciet? We zetten de voor- en nadelen van witte en gekleurde kunststof kozijnen eerlijk op een rij.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="kozijnen-vervangen-overlast.html" class="blog-card" data-cat="Kozijnen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Kozijnen</span>
+                            <p class="blog-card-meta">16 januari 2026 &middot; 8 min</p>
+                            <h3>Kozijnen vervangen: hoeveel overlast heb je ervan?</h3>
+                            <p>Kozijnen vervangen: wat mag je verwachten qua overlast, tijdsduur en rommel? Zo pak je het slim aan.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="horren-bij-kunststof-kozijnen.html" class="blog-card" data-cat="Kozijnen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Kozijnen</span>
+                            <p class="blog-card-meta">11 januari 2026 &middot; 8 min</p>
+                            <h3>Horren bij kunststof kozijnen: alle opties op een rij</h3>
+                            <p>Welke horren passen bij jouw kunststof kozijnen? We zetten alle opties op een rij, van inbouwhorden tot plisséhorren.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="kunststof-kozijnen-bedrijfspand-voordelen.html" class="blog-card" data-cat="Kozijnen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Kozijnen</span>
+                            <p class="blog-card-meta">6 januari 2026 &middot; 8 min</p>
+                            <h3>Kunststof kozijnen voor bedrijfspand: de voordelen</h3>
+                            <p>Wat levert het op om je bedrijfspand te voorzien van kunststof kozijnen? We zetten de belangrijkste voordelen op een rij.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="energielabel-verbeteren-nieuwe-kozijnen.html" class="blog-card" data-cat="Kozijnen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Kozijnen</span>
+                            <p class="blog-card-meta">3 januari 2026 &middot; 8 min</p>
+                            <h3>Energielabel verbeteren met nieuwe kozijnen: hoeveel scheelt het?</h3>
+                            <p>Nieuwe kozijnen kunnen je energielabel meerdere stappen omhoog tillen. Lees hoeveel dat scheelt en wat het je oplevert.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="kozijnen-kopen-zonder-aanbetaling.html" class="blog-card" data-cat="Kozijnen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Kozijnen</span>
+                            <p class="blog-card-meta">29 december 2025 &middot; 7 min</p>
+                            <h3>Kozijnen kopen zonder aanbetaling: zo werkt dat</h3>
+                            <p>Geen aanbetaling bij kozijnen: is dat normaal? Lees wat je rechten zijn en hoe je veilig een installateur kiest.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="kunststof-kozijnen-doorlooptijd-plaatsen.html" class="blog-card" data-cat="Kozijnen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Kozijnen</span>
+                            <p class="blog-card-meta">26 december 2025 &middot; 7 min</p>
+                            <h3>Kunststof kozijnen laten plaatsen: wat is de doorlooptijd?</h3>
+                            <p>Van offerte aanvragen tot kozijnen geplaatst: zo lang duurt het echt, en waar zit de meeste wachttijd.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="kozijnen-vervangen-hypotheek-meefinancieren.html" class="blog-card" data-cat="Kozijnen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Kozijnen</span>
+                            <p class="blog-card-meta">23 december 2025 &middot; 8 min</p>
+                            <h3>Kozijnen vervangen en je hypotheek: zo financier je het</h3>
+                            <p>Kozijnen vervangen en het meefinancieren via je hypotheek? Lees hoe dat werkt, wat het oplevert en waar je op moet letten.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="condensatie-op-ramen-kozijnen.html" class="blog-card" data-cat="Kozijnen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Kozijnen</span>
+                            <p class="blog-card-meta">19 december 2025 &middot; 7 min</p>
+                            <h3>Condensatie op ramen: ligt het aan je kozijnen?</h3>
+                            <p>Condensatie op ramen hoeft niet altijd aan slechte kozijnen te liggen. Lees wanneer het wél tijd is om actie te ondernemen.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="kunststof-kozijnen-reinigen-schoonmaakmiddelen.html" class="blog-card" data-cat="Kozijnen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Kozijnen</span>
+                            <p class="blog-card-meta">16 december 2025 &middot; 8 min</p>
+                            <h3>Kunststof kozijnen reinigen: welke middelen zijn veilig?</h3>
+                            <p>Kunststof kozijnen reinigen doe je niet met zomaar iets. Ontdek welke middelen veilig zijn en welke je beter links laat liggen.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="seeh-subsidie-aanvragen-kozijnen.html" class="blog-card" data-cat="Subsidie" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Subsidie</span>
+                            <p class="blog-card-meta">12 december 2025 &middot; 8 min</p>
+                            <h3>SEEH-subsidie aanvragen voor kozijnen: stap voor stap</h3>
+                            <p>Met de SEEH-subsidie betaal je minder voor nieuwe kozijnen. Zo vraag je het stap voor stap aan.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="kozijnen-overijssel-laten-plaatsen.html" class="blog-card" data-cat="Kozijnen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Kozijnen</span>
+                            <p class="blog-card-meta">8 december 2025 &middot; 8 min</p>
+                            <h3>Kozijnen in Overijssel laten plaatsen: waar op letten?</h3>
+                            <p>Kozijnen laten plaatsen in Overijssel? Dit zijn de belangrijkste aandachtspunten, van isolatiewaarden tot het vergelijken van offertes.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="tocht-door-ramen-en-kozijnen-oorzaken-oplossingen.html" class="blog-card" data-cat="Kozijnen" style="text-decoration:none;color:inherit;">
+                        <div class="blog-card-body">
+                            <span class="blog-cat-tag" style="font-size:11px;margin-bottom:8px;display:inline-block;">Kozijnen</span>
+                            <p class="blog-card-meta">3 december 2025 &middot; 8 min</p>
+                            <h3>Tocht door ramen en kozijnen: oorzaken en oplossingen</h3>
+                            <p>Tocht bij ramen is vervelend én kostbaar. Lees wat de oorzaken zijn en wanneer je kozijnen echt aan vervanging toe zijn.</p>
+                            <span class="blog-lees-meer">Lees meer &rarr;</span>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- SIDEBAR -->
+            <aside class="blog-sidebar">
+
+                <div class="sidebar-widget sidebar-offerte">
+                    <h4>Gratis offertes vergelijken</h4>
+                    <p>Ontvang 3 offertes van installateurs bij jou in de buurt. Gratis en vrijblijvend.</p>
+                    <ul>
+                        <li>&#10003; Geen aanbetaling</li>
+                        <li>&#10003; 20 jaar garantie</li>
+                        <li>&#10003; HR++ glas standaard</li>
+                        <li>&#10003; Gratis horren</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn-primary btn-full" style="margin-top:16px;">Vraag 3 offertes aan</a>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h4>Recente artikelen</h4>
+                    <div class="sidebar-posts">
+
+                        <a href="kunststof-kozijnen-vervangen-kosten-opbrengst.html" class="sidebar-post">
+                            <div>
+                                <p>Kunststof kozijnen vervangen: kosten en opbrengst</p>
+                                <span>8 maart 2026</span>
+                            </div>
+                        </a>
+                        <a href="kozijnen-vervangen-monumentaal-pand.html" class="sidebar-post">
+                            <div>
+                                <p>Kozijnen vervangen bij monument: mag dat en hoe?</p>
+                                <span>6 maart 2026</span>
+                            </div>
+                        </a>
+                        <a href="hr-plus-plus-glas-kunststof-kozijnen-verschil-standaard-glas.html" class="sidebar-post">
+                            <div>
+                                <p>HR++ glas bij kunststof kozijnen: wat is het verschil?</p>
+                                <span>4 maart 2026</span>
+                            </div>
+                        </a>
+                        <a href="kunststof-kozijnen-vs-houten-kozijnen.html" class="sidebar-post">
+                            <div>
+                                <p>Kunststof vs houten kozijnen: wat is de beste keuze?</p>
+                                <span>3 maart 2026</span>
+                            </div>
+                        </a>
+                        <a href="keurmerkcertificaat-kozijnen.html" class="sidebar-post">
+                            <div>
+                                <p>Keurmerkcertificaat kozijnen: wat is het en waarom telt het?</p>
+                                <span>2 maart 2026</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h4>Categorieen</h4>
+                    <div class="sidebar-cats">
+                        <a href="#">Kozijnen <span>32</span></a>
+                        <a href="#">Verduurzamen <span>4</span></a>
+                        <a href="#">Tips <span>3</span></a>
+                        <a href="#">Subsidie <span>2</span></a>
+                        <a href="#">Deuren <span>1</span></a>
+
+                    </div>
+                </div>
+
+            </aside>
+
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container footer-inner">
+        <div class="footer-logo">
+            <span class="logo-123">123</span><span class="logo-kozijnen">kozijnen</span><span class="logo-verg">vergelijker</span><span class="logo-nl">.nl</span>
+            <p>Kozijnen vergelijken &amp; laten plaatsen<br>Oldenzaal</p>
+        </div>
+        <div class="footer-links">
+            <h5>Producten</h5>
+            <a href="kunststof-kozijnen.html">Kunststof kozijnen</a>
+            <a href="kunststof-deuren.html">Kunststof deuren</a>
+            <a href="kunststof-schuifpuien.html">Schuifpuien</a>
+        </div>
+        <div class="footer-links">
+            <h5>Informatie</h5>
+            <a href="over-ons.html">Over ons</a>
+            <a href="blog.html">Blog</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="footer-contact">
+            <h5>Contact</h5>
+            <a href="tel:0546232066" class="footer-contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                0546-23 20 66
+            </a>
+            <a href="mailto:info@123kozijnenvergelijker.nl" class="footer-contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                info@123kozijnenvergelijker.nl
+            </a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p>&copy; 2026 123KozijnenVergelijker.nl &mdash; <a href="algemene-voorwaarden.html">Algemene voorwaarden</a></p>
+        </div>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var btns = document.querySelectorAll('.filter-btn');
+    var featured = document.querySelector('.blog-featured');
+    var cards = document.querySelectorAll('.blog-card');
+
+    btns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            btns.forEach(function(b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+            var cat = btn.textContent.trim();
+
+            if (cat === 'Alle artikelen') {
+                if (featured) featured.style.display = '';
+                cards.forEach(function(c) { c.style.display = ''; });
+            } else {
+                if (featured) {
+                    featured.style.display = (featured.getAttribute('data-cat') === cat) ? '' : 'none';
+                }
+                cards.forEach(function(c) {
+                    c.style.display = (c.getAttribute('data-cat') === cat) ? '' : 'none';
+                });
+            }
+        });
+    });
+})();
+
+// ===== HAMBURGER MENU =====
+(function() {
+    var btn = document.getElementById('hamburger');
+    var nav = document.getElementById('navLinks');
+    if (!btn || !nav) return;
+    btn.addEventListener('click', function() {
+        nav.classList.toggle('open');
+        btn.classList.toggle('open');
+    });
+})();
+</script>
+
+</body>
+</html>

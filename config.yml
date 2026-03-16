@@ -1,0 +1,40 @@
+backend:
+  name: github
+  repo: jarno-kozijnen/123kozijnenvergelijker
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog artikelen"
+    folder: "blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "html"
+    format: "frontmatter"
+    fields:
+      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "Datum", name: "date", widget: "datetime" }
+      - { label: "Samenvatting", name: "description", widget: "text", hint: "Kort stukje voor Google (max 160 tekens)" }
+      - { label: "Categorie", name: "category", widget: "select", options: ["Kozijnen", "Deuren", "Schuifpuien", "Subsidie", "Tips"] }
+      - { label: "Omslagfoto", name: "thumbnail", widget: "image", required: false }
+      - { label: "Inhoud", name: "body", widget: "markdown" }
+
+  - name: "paginas"
+    label: "Pagina teksten"
+    files:
+      - label: "Homepage"
+        name: "homepage"
+        file: "_data/homepage.yml"
+        fields:
+          - { label: "Hero titel", name: "hero_titel", widget: "string" }
+          - { label: "Hero subtitel", name: "hero_sub", widget: "string" }
+          - { label: "Urgency tekst", name: "urgency", widget: "string" }
+      - label: "Contactgegevens"
+        name: "contact"
+        file: "_data/contact.yml"
+        fields:
+          - { label: "Telefoonnummer", name: "telefoon", widget: "string" }
+          - { label: "E-mailadres", name: "email", widget: "string" }
