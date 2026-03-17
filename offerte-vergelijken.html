@@ -271,6 +271,23 @@
         .offerte-garantie strong { display: block; font-size: 16px; margin-bottom: 4px; }
         .offerte-garantie span { font-size: 13px; opacity: 0.85; }
 
+        .offerte-acties { display: flex; flex-direction: column; gap: 10px; margin-top: 24px; }
+        .offerte-actie-item {
+            display: flex; align-items: flex-start; gap: 12px;
+            background: rgba(30,92,47,0.08); border: 1px solid rgba(30,92,47,0.2);
+            border-radius: 10px; padding: 12px 16px; min-height: 44px;
+        }
+        .offerte-actie-item > span { font-size: 20px; line-height: 1.5; flex-shrink: 0; }
+        .offerte-actie-item div { display: flex; flex-direction: column; gap: 2px; }
+        .offerte-actie-item strong { font-size: 14px; color: #1E5C2F; line-height: 1.4; }
+        .offerte-actie-item span { font-size: 13px; color: #555; line-height: 1.4; }
+        @media (max-width: 600px) {
+            .offerte-actie-item { padding: 10px 14px; gap: 10px; }
+            .offerte-actie-item > span { font-size: 18px; }
+            .offerte-actie-item strong { font-size: 13px; }
+            .offerte-actie-item span { font-size: 12px; }
+        }
+
         .multi-offerte-form {
             background: #fff;
             border-radius: 16px;
@@ -568,6 +585,22 @@ src="https://www.facebook.com/tr?id=1524652916329378&ev=PageView&noscript=1"
                     <div class="os-body">
                         <strong>Jij kiest de beste deal</strong>
                         <span>Vrijblijvend, geen verplichtingen</span>
+                    </div>
+                </div>
+            </div>
+            <div class="offerte-acties">
+                <div class="offerte-actie-item">
+                    <span>🎁</span>
+                    <div>
+                        <strong>Gratis horren t.w.v. €800</strong>
+                        <span>actie geldig t/m 31 maart 2026</span>
+                    </div>
+                </div>
+                <div class="offerte-actie-item">
+                    <span>🏛️</span>
+                    <div>
+                        <strong>0% rente via Nationaal Warmtefonds</strong>
+                        <span>overheidsregeling — wij regelen de aanvraag</span>
                     </div>
                 </div>
             </div>
