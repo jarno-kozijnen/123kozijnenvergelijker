@@ -613,7 +613,7 @@ def make_page(s):
         "@type": "LocalBusiness",
         "name": "123KozijnenVergelijker.nl",
         "url": "https://www.123kozijnenvergelijker.nl",
-        "telephone": "0546-23 20 66",
+        "telephone": "0541-23 52 22",
         "email": "info@123kozijnenvergelijker.nl",
         "address": {
           "@type": "PostalAddress",
@@ -998,7 +998,7 @@ def make_page(s):
         <div class="footer-contact">
             <h5>Contact</h5>
             <p>info@123kozijnenvergelijker.nl</p>
-            <p>0546-23 20 66</p>
+            <p>0541-23 52 22</p>
         </div>
     </div>
     <div class="footer-bottom">
