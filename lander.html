@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kozijnstunter – Kunststof Kozijnen op Maat | Gratis Offerte</title>
+  <meta name="description" content="Kunststof kozijnen op maat laten plaatsen? Vraag gratis en vrijblijvend een offerte aan. Snelle montage, 10 jaar garantie en scherpe prijzen." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blauw: #1A2E4A;
+      --blauw-licht: #243d63;
+      --oranje: #F47C20;
+      --oranje-hover: #d96a10;
+      --grijs: #F4F6F9;
+      --grijs-rand: #E2E8F0;
+      --tekst: #1e293b;
+      --tekst-zacht: #64748b;
+      --wit: #ffffff;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      color: var(--tekst);
+      background: var(--wit);
+      line-height: 1.55;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: var(--blauw);
+      padding: 0 32px;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--wit);
+      letter-spacing: -0.4px;
+      text-decoration: none;
+    }
+
+    .logo span { color: var(--oranje); }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .header-tel {
+      color: var(--wit);
+      font-size: 0.875rem;
+      font-weight: 500;
+      opacity: 0.7;
+      text-decoration: none;
+    }
+
+    .header-cta {
+      background: var(--oranje);
+      color: var(--wit);
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 8px 18px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+
+    .header-cta:hover { background: var(--oranje-hover); }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: var(--blauw);
+      color: var(--wit);
+      padding: 64px 32px 72px;
+      text-align: center;
+    }
+
+    .hero-label {
+      display: inline-block;
+      background: rgba(244,124,32,0.15);
+      color: var(--oranje);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 3px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      line-height: 1.15;
+      max-width: 680px;
+      margin: 0 auto 14px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero h1 span { color: var(--oranje); }
+
+    .hero p {
+      font-size: 1rem;
+      opacity: 0.75;
+      max-width: 500px;
+      margin: 0 auto 28px;
+      font-weight: 400;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--oranje);
+      color: var(--wit);
+      padding: 13px 28px;
+      border-radius: 5px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.15s, transform 0.1s;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .btn:hover {
+      background: var(--oranje-hover);
+      transform: translateY(-1px);
+    }
+
+    .hero-trust {
+      margin-top: 18px;
+      font-size: 0.8rem;
+      opacity: 0.5;
+      letter-spacing: 0.2px;
+    }
+
+    /* ===== USP BALK ===== */
+    .usp-balk {
+      background: var(--oranje);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .usp-balk-item {
+      padding: 11px 24px;
+      font-weight: 600;
+      font-size: 0.82rem;
+      color: var(--wit);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      letter-spacing: 0.1px;
+      border-right: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .usp-balk-item:last-child { border-right: none; }
+
+    .usp-balk-item svg {
+      width: 13px;
+      height: 13px;
+      flex-shrink: 0;
+    }
+
+    /* ===== USP SECTIE ===== */
+    .usps {
+      background: var(--grijs);
+      padding: 56px 32px;
+      text-align: center;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--oranje);
+      margin-bottom: 10px;
+    }
+
+    .usps h2 {
+      font-size: 1.5rem;
+      color: var(--blauw);
+      margin-bottom: 36px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+    }
+
+    .usp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .usp-card {
+      background: var(--wit);
+      border-radius: 8px;
+      padding: 24px 20px;
+      box-shadow: 0 1px 4px rgba(26,46,74,0.07);
+      border: 1px solid var(--grijs-rand);
+      text-align: left;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .usp-card:hover {
+      box-shadow: 0 4px 16px rgba(26,46,74,0.10);
+      transform: translateY(-2px);
+    }
+
+    .usp-card-dot {
+      width: 36px;
+      height: 36px;
+      background: rgba(244,124,32,0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+
+    .usp-card-dot svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--oranje);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .usp-card h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--blauw);
+      margin-bottom: 6px;
+    }
+
+    .usp-card p {
+      font-size: 0.83rem;
+      color: var(--tekst-zacht);
+      line-height: 1.5;
+    }
+
+    /* ===== REVIEWS ===== */
+    .reviews {
+      background: var(--wit);
+      padding: 56px 32px;
+      text-align: center;
+    }
+
+    .reviews h2 {
+      font-size: 1.5rem;
+      color: var(--blauw);
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      margin-bottom: 4px;
+    }
+
+    .reviews-sub {
+      color: var(--tekst-zacht);
+      margin-bottom: 32px;
+      font-size: 0.85rem;
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .review-card {
+      background: var(--grijs);
+      border-radius: 8px;
+      padding: 22px 20px;
+      text-align: left;
+      border: 1px solid var(--grijs-rand);
+    }
+
+    .review-stars {
+      color: var(--oranje);
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .review-card blockquote {
+      font-size: 0.875rem;
+      color: #475569;
+      font-style: italic;
+      margin-bottom: 12px;
+      line-height: 1.55;
+    }
+
+    .review-card cite {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--blauw);
+      font-style: normal;
+      opacity: 0.8;
+    }
+
+    /* ===== FORMULIER ===== */
+    .form-sectie {
+      background: var(--blauw);
+      padding: 64px 32px;
+      color: var(--wit);
+    }
+
+    .form-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      max-width: 960px;
+      margin: 0 auto;
+      align-items: start;
+    }
+
+    .form-intro h2 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      line-height: 1.2;
+      letter-spacing: -0.4px;
+    }
+
+    .form-intro h2 span { color: var(--oranje); }
+
+    .form-intro p {
+      opacity: 0.7;
+      margin-bottom: 24px;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .form-voordelen {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .form-voordelen li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.875rem;
+      opacity: 0.9;
+    }
+
+    .check-icon {
+      width: 18px;
+      height: 18px;
+      background: var(--oranje);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .check-icon svg {
+      width: 10px;
+      height: 10px;
+      stroke: white;
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    form {
+      background: var(--wit);
+      border-radius: 10px;
+      padding: 28px 28px 24px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+    }
+
+    form h3 {
+      color: var(--blauw);
+      font-size: 1.05rem;
+      font-weight: 800;
+      margin-bottom: 18px;
+      letter-spacing: -0.2px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .form-group {
+      margin-bottom: 12px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--tekst-zacht);
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1.5px solid var(--grijs-rand);
+      border-radius: 5px;
+      font-size: 0.9rem;
+      color: var(--tekst);
+      background: var(--wit);
+      transition: border-color 0.15s;
+      font-family: inherit;
+      appearance: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--oranje);
+      box-shadow: 0 0 0 3px rgba(244,124,32,0.12);
+    }
+
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 32px;
+    }
+
+    textarea { resize: vertical; min-height: 72px; }
+
+    .form-submit {
+      width: 100%;
+      padding: 13px;
+      font-size: 0.95rem;
+      margin-top: 6px;
+      border-radius: 5px;
+    }
+
+    .form-privacy {
+      font-size: 0.73rem;
+      color: #94a3b8;
+      margin-top: 10px;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .form-privacy a { color: #94a3b8; text-decoration: underline; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #0f1c2d;
+      color: #64748b;
+      padding: 24px 32px;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    footer a { color: #94a3b8; text-decoration: none; }
+    footer a:hover { color: var(--oranje); }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 960px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 720px) {
+      header { padding: 0 16px; }
+      .header-tel { display: none; }
+      .hero { padding: 48px 16px 56px; }
+      .usps, .reviews, .form-sectie { padding: 48px 16px; }
+      .form-wrapper { grid-template-columns: 1fr; gap: 28px; }
+      .form-row { grid-template-columns: 1fr; }
+      form { padding: 20px; }
+      .usp-balk-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); width: 100%; justify-content: center; }
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a class="logo" href="#">Kozijn<span>Stunter</span></a>
+    <div class="header-right">
+      <a class="header-tel" href="tel:+310000000000">000 - 000 0000</a>
+      <a class="header-cta" href="#offerte">Gratis offerte</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-label">Kunststof kozijnen specialist</div>
+    <h1>Nieuwe kozijnen op maat?<br><span>Gratis offerte binnen 24 uur</span></h1>
+    <p>Energiebesparend, onderhoudsvrij en scherp geprijsd. Al meer dan 1.200 huiseigenaren gingen u voor.</p>
+    <a href="#offerte" class="btn">Gratis offerte aanvragen</a>
+    <p class="hero-trust">Vrijblijvend &nbsp;&bull;&nbsp; Geen verplichtingen &nbsp;&bull;&nbsp; Reactie binnen 24 uur</p>
+  </section>
+
+  <!-- USP BALK -->
+  <div class="usp-balk">
+    <div class="usp-balk-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      Gratis offerte
+    </div>
+    <div class="usp-balk-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      10 jaar garantie
+    </div>
+    <div class="usp-balk-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      Inclusief montage
+    </div>
+    <div class="usp-balk-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      Gecertificeerde monteurs
+    </div>
+    <div class="usp-balk-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      Binnen 2 weken geplaatst
+    </div>
+  </div>
+
+  <!-- USP SECTIE -->
+  <section class="usps">
+    <div class="section-label">Voordelen</div>
+    <h2>Waarom kiezen voor KozijnStunter?</h2>
+    <div class="usp-grid">
+      <div class="usp-card">
+        <div class="usp-card-dot">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Maatwerk kozijnen</h3>
+        <p>Elk kozijn op maat gemaakt voor uw woning. Geen standaard maten, maar precies wat u nodig heeft.</p>
+      </div>
+      <div class="usp-card">
+        <div class="usp-card-dot">
+          <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3>Professionele montage</h3>
+        <p>Gecertificeerde monteurs plaatsen uw kozijnen vakkundig en netjes. U heeft er geen omkijken naar.</p>
+      </div>
+      <div class="usp-card">
+        <div class="usp-card-dot">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <h3>Scherpe prijzen</h3>
+        <p>Door directe inkoop houden we de prijzen laag. Geen tussenpersonen, meer voordeel voor u.</p>
+      </div>
+      <div class="usp-card">
+        <div class="usp-card-dot">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Snelle levering</h3>
+        <p>Van offerte tot plaatsing binnen 2 weken. U hoeft niet lang te wachten op uw nieuwe kozijnen.</p>
+      </div>
+      <div class="usp-card">
+        <div class="usp-card-dot">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Energiebesparend</h3>
+        <p>Bespaar tot 20% op uw energierekening. Kunststof kozijnen isoleren uitstekend.</p>
+      </div>
+      <div class="usp-card">
+        <div class="usp-card-dot">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3>10 jaar garantie</h3>
+        <p>Wij staan achter ons werk. Alle kozijnen worden geleverd met 10 jaar productgarantie.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews">
+    <div class="section-label">Beoordelingen</div>
+    <h2>Wat onze klanten zeggen</h2>
+    <p class="reviews-sub">Gemiddeld 4.8 / 5 &nbsp;&bull;&nbsp; 312 beoordelingen</p>
+    <div class="review-grid">
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"Super blij met de nieuwe kozijnen. Vakkundig geplaatst, nette afwerking en een eerlijke prijs. Echt een aanrader!"</blockquote>
+        <cite>Peter V. &mdash; Rotterdam</cite>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"Binnen 3 dagen offerte ontvangen en 10 dagen later al geplaatst. Het huis is zoveel warmer nu. Top service!"</blockquote>
+        <cite>Sandra M. &mdash; Utrecht</cite>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+        <blockquote>"Goede communicatie, nette monteurs en de prijs was beter dan bij twee andere offertes. Zou ze zeker aanraden."</blockquote>
+        <cite>Mark de B. &mdash; Eindhoven</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULIER -->
+  <section class="form-sectie" id="offerte">
+    <div class="form-wrapper">
+      <div class="form-intro">
+        <div class="section-label" style="opacity:0.6;">Vrijblijvend &amp; gratis</div>
+        <h2>Vraag uw <span>gratis offerte</span> aan</h2>
+        <p>Vul het formulier in en ontvang binnen 24 uur een vrijblijvende offerte op maat.</p>
+        <ul class="form-voordelen">
+          <li>
+            <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Geen verplichtingen, altijd vrijblijvend
+          </li>
+          <li>
+            <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Persoonlijk advies van een specialist
+          </li>
+          <li>
+            <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Scherpe prijs inclusief montage
+          </li>
+          <li>
+            <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Wij komen bij u langs voor inmeting
+          </li>
+          <li>
+            <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Reactie binnen 24 uur op werkdagen
+          </li>
+        </ul>
+      </div>
+
+      <form name="offerte" method="POST" data-netlify="true" action="/bedankt.html">
+        <h3>Gratis offerte aanvragen</h3>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="naam">Naam *</label>
+            <input type="text" id="naam" name="naam" placeholder="Voor- en achternaam" required />
+          </div>
+          <div class="form-group">
+            <label for="telefoon">Telefoon *</label>
+            <input type="tel" id="telefoon" name="telefoon" placeholder="06 - 12 34 56 78" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">E-mailadres *</label>
+            <input type="email" id="email" name="email" placeholder="uw@email.nl" required />
+          </div>
+          <div class="form-group">
+            <label for="postcode">Postcode</label>
+            <input type="text" id="postcode" name="postcode" placeholder="1234 AB" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="type">Wat heeft u nodig?</label>
+          <select id="type" name="type">
+            <option value="">Maak een keuze</option>
+            <option value="kozijnen">Kozijnen vervangen</option>
+            <option value="ramen">Ramen plaatsen</option>
+            <option value="deuren">Deuren vervangen</option>
+            <option value="combinatie">Kozijnen + ramen + deuren</option>
+            <option value="weet-niet">Ik weet het nog niet</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="bericht">Aanvullende informatie</label>
+          <textarea id="bericht" name="bericht" placeholder="Bijv. aantal kozijnen, gewenste kleur, specifieke wensen..."></textarea>
+        </div>
+
+        <button type="submit" class="btn form-submit">Stuur mijn offerte aanvraag</button>
+        <p class="form-privacy">Uw gegevens worden nooit gedeeld met derden. Zie onze <a href="#">privacyverklaring</a>.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span>&copy; 2026 KozijnStunter &nbsp;&bull;&nbsp; KvK: 00000000</span>
+      <span>
+        <a href="#">Privacyverklaring</a> &nbsp;&bull;&nbsp;
+        <a href="#">Algemene voorwaarden</a> &nbsp;&bull;&nbsp;
+        <a href="tel:+310000000000">000 - 000 0000</a>
+      </span>
+    </div>
+  </footer>
+
+</body>
+</html>
