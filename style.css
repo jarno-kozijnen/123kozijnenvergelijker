@@ -6,6 +6,7 @@
 html { overflow-x: hidden; scroll-behavior: smooth; }
 
 #contact { scroll-margin-top: 72px; }
+#bespaarcheck { scroll-margin-top: 72px; }
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -1328,7 +1329,7 @@ h2 {
 /* =====================
    BESPAARCHECK
 ===================== */
-.bespaarcheck { background: #f8faf8; }
+.bespaarcheck { background: #f8faf8; padding: 80px 0; }
 
 .bespaarcheck-wrap {
     max-width: 720px;
@@ -1447,7 +1448,7 @@ h2 {
     margin-bottom: 4px;
 }
 
-.bedrag-item.highlight .bedrag-nr { color: #2D8A6E; }
+.bedrag-item.highlight .bedrag-nr { color: #fff; }
 .bedrag-label { font-size: 13px; color: #666; }
 .bedrag-item.highlight .bedrag-label { color: rgba(255,255,255,0.8); }
 
