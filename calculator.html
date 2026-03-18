@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Besparing Calculator Kozijnen – Hoeveel bespaar ik?</title>
+  <meta name="description" content="Bereken in 60 seconden hoeveel u kunt besparen met nieuwe kunststof kozijnen. Gratis en vrijblijvend." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blauw: #1A2E4A;
+      --blauw-licht: #243d63;
+      --oranje: #F47C20;
+      --oranje-hover: #d96a10;
+      --groen: #16a34a;
+      --grijs: #F4F6F9;
+      --grijs-rand: #E2E8F0;
+      --tekst: #1e293b;
+      --tekst-zacht: #64748b;
+      --wit: #ffffff;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      color: var(--tekst);
+      background: var(--grijs);
+      line-height: 1.55;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    /* HEADER */
+    header {
+      background: var(--blauw);
+      padding: 0 32px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo { font-size: 1.2rem; font-weight: 800; color: var(--wit); text-decoration: none; }
+    .logo span { color: var(--oranje); }
+    .header-tel { color: rgba(255,255,255,0.6); font-size: 0.85rem; text-decoration: none; }
+
+    /* HERO */
+    .hero {
+      background: var(--blauw);
+      color: var(--wit);
+      text-align: center;
+      padding: 40px 24px 56px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(244,124,32,0.15);
+      color: var(--oranje);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 3px;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 800;
+      letter-spacing: -0.4px;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 span { color: var(--oranje); }
+
+    .hero p {
+      font-size: 0.95rem;
+      opacity: 0.7;
+      max-width: 460px;
+      margin: 0 auto;
+    }
+
+    /* PROGRESS */
+    .progress-wrap {
+      max-width: 600px;
+      margin: -16px auto 0;
+      padding: 0 24px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .progress-bar-bg {
+      background: rgba(255,255,255,0.2);
+      border-radius: 4px;
+      height: 4px;
+      margin-bottom: 8px;
+    }
+
+    .progress-bar-fill {
+      background: var(--oranje);
+      border-radius: 4px;
+      height: 4px;
+      transition: width 0.4s ease;
+      width: 25%;
+    }
+
+    .progress-label {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.55);
+      text-align: right;
+    }
+
+    /* CARD */
+    .card-wrap {
+      max-width: 600px;
+      margin: 24px auto 40px;
+      padding: 0 16px;
+    }
+
+    .card {
+      background: var(--wit);
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 4px 24px rgba(26,46,74,0.10);
+    }
+
+    .step { display: none; }
+    .step.active { display: block; }
+
+    .step-number {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--oranje);
+      margin-bottom: 6px;
+    }
+
+    .step h2 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--blauw);
+      margin-bottom: 6px;
+      letter-spacing: -0.2px;
+    }
+
+    .step-sub {
+      font-size: 0.85rem;
+      color: var(--tekst-zacht);
+      margin-bottom: 24px;
+    }
+
+    /* KEUZE KNOPPEN */
+    .keuze-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .keuze-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+    .keuze-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+    .keuze-btn {
+      border: 2px solid var(--grijs-rand);
+      border-radius: 8px;
+      padding: 16px 14px;
+      background: var(--wit);
+      cursor: pointer;
+      text-align: center;
+      transition: border-color 0.15s, background 0.15s, transform 0.1s;
+      font-family: inherit;
+    }
+
+    .keuze-btn:hover {
+      border-color: var(--oranje);
+      background: rgba(244,124,32,0.04);
+      transform: translateY(-1px);
+    }
+
+    .keuze-btn.selected {
+      border-color: var(--oranje);
+      background: rgba(244,124,32,0.07);
+    }
+
+    .keuze-icon {
+      font-size: 1.6rem;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .keuze-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--blauw);
+      display: block;
+    }
+
+    .keuze-sub {
+      font-size: 0.75rem;
+      color: var(--tekst-zacht);
+      display: block;
+      margin-top: 2px;
+    }
+
+    /* SLIDER */
+    .slider-wrap { margin-top: 8px; }
+
+    .slider-value {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--blauw);
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .slider-value span { font-size: 1rem; font-weight: 500; color: var(--tekst-zacht); }
+
+    input[type="range"] {
+      width: 100%;
+      accent-color: var(--oranje);
+      height: 6px;
+      cursor: pointer;
+    }
+
+    .slider-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--tekst-zacht);
+      margin-top: 6px;
+    }
+
+    /* NAV KNOPPEN */
+    .step-nav {
+      display: flex;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+      transition: background 0.15s, transform 0.1s;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      background: var(--oranje);
+      color: var(--wit);
+      flex: 1;
+    }
+
+    .btn-primary:hover { background: var(--oranje-hover); }
+
+    .btn-secondary {
+      background: var(--grijs);
+      color: var(--tekst-zacht);
+      font-weight: 600;
+    }
+
+    .btn-secondary:hover { background: var(--grijs-rand); }
+
+    /* RESULTAAT */
+    .resultaat { display: none; }
+    .resultaat.active { display: block; }
+
+    .resultaat-hero {
+      background: linear-gradient(135deg, var(--blauw), var(--blauw-licht));
+      border-radius: 10px;
+      padding: 28px 24px;
+      text-align: center;
+      color: var(--wit);
+      margin-bottom: 20px;
+    }
+
+    .resultaat-hero p {
+      font-size: 0.85rem;
+      opacity: 0.7;
+      margin-bottom: 8px;
+    }
+
+    .besparing-getal {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--oranje);
+      letter-spacing: -1px;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .besparing-sub {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .stat-card {
+      background: var(--grijs);
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+      border: 1px solid var(--grijs-rand);
+    }
+
+    .stat-getal {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--blauw);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--tekst-zacht);
+      margin-top: 2px;
+      display: block;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--grijs-rand);
+      margin: 20px 0;
+    }
+
+    /* LEADFORMULIER */
+    .lead-titel {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--blauw);
+      margin-bottom: 4px;
+    }
+
+    .lead-sub {
+      font-size: 0.83rem;
+      color: var(--tekst-zacht);
+      margin-bottom: 20px;
+    }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-group { margin-bottom: 12px; }
+
+    label {
+      display: block;
+      font-size: 0.73rem;
+      font-weight: 700;
+      color: var(--tekst-zacht);
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1.5px solid var(--grijs-rand);
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: var(--tekst);
+      background: var(--wit);
+      transition: border-color 0.15s;
+      font-family: inherit;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--oranje);
+      box-shadow: 0 0 0 3px rgba(244,124,32,0.1);
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 14px;
+      font-size: 1rem;
+      margin-top: 4px;
+      border-radius: 6px;
+    }
+
+    .privacy-note {
+      font-size: 0.72rem;
+      color: #94a3b8;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .privacy-note a { color: #94a3b8; text-decoration: underline; }
+
+    /* SUCCES */
+    .succes { display: none; text-align: center; padding: 16px 0; }
+    .succes.active { display: block; }
+
+    .succes-icon {
+      width: 64px;
+      height: 64px;
+      background: rgba(22,163,74,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+
+    .succes-icon svg { width: 32px; height: 32px; stroke: var(--groen); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+    .succes h2 { font-size: 1.3rem; font-weight: 800; color: var(--blauw); margin-bottom: 8px; }
+    .succes p { font-size: 0.9rem; color: var(--tekst-zacht); max-width: 380px; margin: 0 auto 20px; }
+
+    /* FOOTER */
+    footer {
+      background: #0f1c2d;
+      color: #64748b;
+      padding: 20px 32px;
+      text-align: center;
+      font-size: 0.78rem;
+    }
+
+    footer a { color: #94a3b8; text-decoration: none; }
+    footer a:hover { color: var(--oranje); }
+
+    @media (max-width: 560px) {
+      .card { padding: 20px; }
+      .keuze-grid.cols-3 { grid-template-columns: 1fr 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      header { padding: 0 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="logo" href="index.html">Kozijn<span>Stunter</span></a>
+    <a class="header-tel" href="tel:+310000000000">000 - 000 0000</a>
+  </header>
+
+  <div class="hero">
+    <div class="hero-badge">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      Gratis berekening · 60 seconden
+    </div>
+    <h1>Hoeveel bespaart u met<br><span>nieuwe kozijnen?</span></h1>
+    <p>Beantwoord 4 korte vragen en zie direct uw persoonlijke besparing.</p>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar-bg">
+      <div class="progress-bar-fill" id="progressBar"></div>
+    </div>
+    <div class="progress-label" id="progressLabel">Stap 1 van 4</div>
+  </div>
+
+  <div class="card-wrap">
+    <div class="card" id="calculatorCard">
+
+      <!-- STAP 1: Woningtype -->
+      <div class="step active" id="step1">
+        <div class="step-number">Stap 1 van 4</div>
+        <h2>Wat voor woning heeft u?</h2>
+        <p class="step-sub">Dit bepaalt het aantal kozijnen en de warmteverliezen.</p>
+        <div class="keuze-grid cols-2">
+          <button class="keuze-btn" onclick="selectKeuze(this, 'woning', 'tussenwoning', 8)">
+            <span class="keuze-icon">🏠</span>
+            <span class="keuze-label">Tussenwoning</span>
+            <span class="keuze-sub">Gem. 8 kozijnen</span>
+          </button>
+          <button class="keuze-btn" onclick="selectKeuze(this, 'woning', 'hoekwoning', 11)">
+            <span class="keuze-icon">🏡</span>
+            <span class="keuze-label">Hoekwoning</span>
+            <span class="keuze-sub">Gem. 11 kozijnen</span>
+          </button>
+          <button class="keuze-btn" onclick="selectKeuze(this, 'woning', '2o1kap', 14)">
+            <span class="keuze-icon">🏘️</span>
+            <span class="keuze-label">2-onder-1-kap</span>
+            <span class="keuze-sub">Gem. 14 kozijnen</span>
+          </button>
+          <button class="keuze-btn" onclick="selectKeuze(this, 'woning', 'vrijstaand', 18)">
+            <span class="keuze-icon">🏛️</span>
+            <span class="keuze-label">Vrijstaande woning</span>
+            <span class="keuze-sub">Gem. 18 kozijnen</span>
+          </button>
+        </div>
+        <div class="step-nav">
+          <button class="btn btn-primary" onclick="volgendeStap(2)" id="btn1" disabled>Volgende stap &rarr;</button>
+        </div>
+      </div>
+
+      <!-- STAP 2: Huidige beglazing -->
+      <div class="step" id="step2">
+        <div class="step-number">Stap 2 van 4</div>
+        <h2>Wat voor glas heeft u nu?</h2>
+        <p class="step-sub">De huidige kwaliteit bepaalt hoeveel u kunt besparen.</p>
+        <div class="keuze-grid">
+          <button class="keuze-btn" onclick="selectKeuze(this, 'glas', 'enkel', 1.0)">
+            <span class="keuze-label">Enkel glas</span>
+            <span class="keuze-sub">Sterk verouderd, hoog energieverlies</span>
+          </button>
+          <button class="keuze-btn" onclick="selectKeuze(this, 'glas', 'oud_dubbel', 0.65)">
+            <span class="keuze-label">Oud dubbelglas (voor 2000)</span>
+            <span class="keuze-sub">Verouderd isolatieglas, nog besparingspotentieel</span>
+          </button>
+          <button class="keuze-btn" onclick="selectKeuze(this, 'glas', 'hr', 0.35)">
+            <span class="keuze-label">HR glas (na 2000)</span>
+            <span class="keuze-sub">Matig geïsoleerd, kozijnen verouderd</span>
+          </button>
+          <button class="keuze-btn" onclick="selectKeuze(this, 'glas', 'hrplus', 0.15)">
+            <span class="keuze-label">HR+ / HR++ glas</span>
+            <span class="keuze-sub">Al redelijk modern, beperkte besparing</span>
+          </button>
+        </div>
+        <div class="step-nav">
+          <button class="btn btn-secondary" onclick="vorigeStap(1)">← Terug</button>
+          <button class="btn btn-primary" onclick="volgendeStap(3)" id="btn2" disabled>Volgende stap &rarr;</button>
+        </div>
+      </div>
+
+      <!-- STAP 3: Gasverbruik -->
+      <div class="step" id="step3">
+        <div class="step-number">Stap 3 van 4</div>
+        <h2>Wat is uw jaarlijks gasverbruik?</h2>
+        <p class="step-sub">Vul in wat u approximately verbruikt. Kijk op uw energierekening.</p>
+        <div class="slider-wrap">
+          <div class="slider-value" id="gasDisplay">1.500 <span>m³ per jaar</span></div>
+          <input type="range" min="500" max="4000" step="100" value="1500" id="gasSlider" oninput="updateGas(this.value)" />
+          <div class="slider-labels">
+            <span>500 m³ (klein)</span>
+            <span>4.000 m³ (groot)</span>
+          </div>
+        </div>
+        <div class="step-nav">
+          <button class="btn btn-secondary" onclick="vorigeStap(2)">← Terug</button>
+          <button class="btn btn-primary" onclick="volgendeStap(4)">Volgende stap &rarr;</button>
+        </div>
+      </div>
+
+      <!-- STAP 4: Leeftijd kozijnen -->
+      <div class="step" id="step4">
+        <div class="step-number">Stap 4 van 4</div>
+        <h2>Hoe oud zijn uw huidige kozijnen?</h2>
+        <p class="step-sub">Oudere kozijnen vertonen meer lekkage en warmteverlies.</p>
+        <div class="keuze-grid cols-3">
+          <button class="keuze-btn" onclick="selectKeuze(this, 'leeftijd', 'jong', 0.8)">
+            <span class="keuze-label">Jonger dan 10 jaar</span>
+          </button>
+          <button class="keuze-btn" onclick="selectKeuze(this, 'leeftijd', 'midden', 1.0)">
+            <span class="keuze-label">10 – 25 jaar</span>
+          </button>
+          <button class="keuze-btn" onclick="selectKeuze(this, 'leeftijd', 'oud', 1.25)">
+            <span class="keuze-label">Ouder dan 25 jaar</span>
+          </button>
+        </div>
+        <div class="step-nav">
+          <button class="btn btn-secondary" onclick="vorigeStap(3)">← Terug</button>
+          <button class="btn btn-primary" onclick="berekenResultaat()" id="btn4" disabled>Bereken mijn besparing &rarr;</button>
+        </div>
+      </div>
+
+      <!-- RESULTAAT -->
+      <div class="resultaat" id="resultaat">
+        <div class="resultaat-hero">
+          <p>Uw geschatte jaarlijkse besparing</p>
+          <div class="besparing-getal" id="besparingGetal">€ —</div>
+          <div class="besparing-sub">per jaar op uw energierekening</div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-getal" id="terugverdien">—</span>
+            <span class="stat-label">Terugverdientijd</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-getal" id="co2besparing">—</span>
+            <span class="stat-label">CO₂ besparing/jaar</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-getal" id="besparing10">—</span>
+            <span class="stat-label">Besparing over 10 jaar</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-getal" id="aantalKozijnen">—</span>
+            <span class="stat-label">Geschat aantal kozijnen</span>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <p class="lead-titel">Ontvang uw persoonlijke offerte</p>
+        <p class="lead-sub">Vul uw gegevens in en ontvang binnen 24 uur een exacte berekening + vrijblijvende offerte op maat.</p>
+
+        <form name="calculator-lead" method="POST" data-netlify="true" action="/bedankt.html" onsubmit="showSucces(event)">
+          <input type="hidden" name="besparing" id="hiddenBesparing" />
+          <input type="hidden" name="woningtype" id="hiddenWoning" />
+          <input type="hidden" name="glas" id="hiddenGlas" />
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="naam">Naam *</label>
+              <input type="text" id="naam" name="naam" placeholder="Voor- en achternaam" required />
+            </div>
+            <div class="form-group">
+              <label for="telefoon">Telefoon *</label>
+              <input type="tel" id="telefoon" name="telefoon" placeholder="06 - 12 34 56 78" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">E-mailadres *</label>
+            <input type="email" id="email" name="email" placeholder="uw@emailadres.nl" required />
+          </div>
+          <div class="form-group">
+            <label for="postcode">Postcode</label>
+            <input type="text" id="postcode" name="postcode" placeholder="1234 AB" />
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-submit">Stuur mijn gratis berekening &amp; offerte</button>
+          <p class="privacy-note">Vrijblijvend · Geen verplichtingen · Zie onze <a href="privacyverklaring.html">privacyverklaring</a></p>
+        </form>
+      </div>
+
+      <!-- SUCCES -->
+      <div class="succes" id="succes">
+        <div class="succes-icon">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h2>Aanvraag ontvangen!</h2>
+        <p>Wij nemen binnen 24 uur contact met u op met uw persoonlijke berekening en een vrijblijvende offerte.</p>
+        <a href="lander.html" class="btn btn-primary" style="display:inline-block; text-decoration:none;">Terug naar de website</a>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2026 KozijnStunter &nbsp;&bull;&nbsp;
+    <a href="privacyverklaring.html">Privacyverklaring</a> &nbsp;&bull;&nbsp;
+    <a href="algemene-voorwaarden.html">Algemene voorwaarden</a>
+  </footer>
+
+  <script>
+    const state = {
+      woning: null, woningKozijnen: 0,
+      glas: null, glasFactor: 0,
+      gas: 1500,
+      leeftijd: null, leeftijdFactor: 0
+    };
+
+    function selectKeuze(btn, type, waarde, extra) {
+      // Deselecteer anderen in dezelfde stap
+      btn.closest('.keuze-grid').querySelectorAll('.keuze-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+
+      if (type === 'woning') {
+        state.woning = waarde;
+        state.woningKozijnen = extra;
+        document.getElementById('btn1').disabled = false;
+      } else if (type === 'glas') {
+        state.glas = waarde;
+        state.glasFactor = extra;
+        document.getElementById('btn2').disabled = false;
+      } else if (type === 'leeftijd') {
+        state.leeftijd = waarde;
+        state.leeftijdFactor = extra;
+        document.getElementById('btn4').disabled = false;
+      }
+    }
+
+    function updateGas(val) {
+      state.gas = parseInt(val);
+      document.getElementById('gasDisplay').innerHTML = parseInt(val).toLocaleString('nl-NL') + ' <span>m³ per jaar</span>';
+    }
+
+    function updateProgress(stap) {
+      const pct = (stap / 4) * 100;
+      document.getElementById('progressBar').style.width = pct + '%';
+      document.getElementById('progressLabel').textContent = stap <= 4 ? `Stap ${stap} van 4` : 'Resultaat';
+    }
+
+    function volgendeStap(nr) {
+      document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+      document.getElementById('step' + nr).classList.add('active');
+      updateProgress(nr);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function vorigeStap(nr) {
+      document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+      document.getElementById('step' + nr).classList.add('active');
+      updateProgress(nr);
+    }
+
+    function berekenResultaat() {
+      // Berekening: gasprijs €1,10/m³, kozijnen verantwoordelijk voor ~20% warmteverlies
+      const gasprijs = 1.10;
+      const kozijnenAandeel = 0.20;
+      const besparing = Math.round(state.gas * gasprijs * kozijnenAandeel * state.glasFactor * state.leeftijdFactor / 10) * 10;
+      const investering = state.woningKozijnen * 650; // gem. €650 per kozijn all-in
+      const terugverdien = Math.round(investering / besparing);
+      const co2 = Math.round(besparing / gasprijs * 1.78 / 10) * 10; // kg CO2 per m³ gas
+      const besparing10 = besparing * 10;
+
+      document.getElementById('besparingGetal').textContent = '€ ' + besparing.toLocaleString('nl-NL');
+      document.getElementById('terugverdien').textContent = terugverdien + ' jaar';
+      document.getElementById('co2besparing').textContent = co2 + ' kg';
+      document.getElementById('besparing10').textContent = '€ ' + besparing10.toLocaleString('nl-NL');
+      document.getElementById('aantalKozijnen').textContent = '~' + state.woningKozijnen + ' stuks';
+
+      // Hidden fields
+      document.getElementById('hiddenBesparing').value = '€' + besparing + '/jaar';
+      document.getElementById('hiddenWoning').value = state.woning;
+      document.getElementById('hiddenGlas').value = state.glas;
+
+      // Toon resultaat
+      document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+      document.getElementById('resultaat').classList.add('active');
+      document.getElementById('progressBar').style.width = '100%';
+      document.getElementById('progressLabel').textContent = 'Uw resultaat';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function showSucces(e) {
+      e.preventDefault();
+      document.getElementById('resultaat').classList.remove('active');
+      document.getElementById('succes').classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Init
+    updateProgress(1);
+  </script>
+
+</body>
+</html>
