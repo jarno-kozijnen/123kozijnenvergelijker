@@ -712,6 +712,74 @@
             .fin-kenmerken { grid-template-columns: 1fr 1fr; }
             .fin-stats-sep { display: none; }
         }
+    /* =====================
+       OFFERTE POPUP
+    ===================== */
+    .offerte-popup-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.55);
+        z-index: 10000;
+        align-items: flex-end;
+        justify-content: center;
+        padding: 0;
+    }
+    .offerte-popup-overlay.open {
+        display: flex;
+    }
+    .offerte-popup-inner {
+        background: #fff;
+        width: 100%;
+        max-height: 92vh;
+        overflow-y: auto;
+        border-radius: 16px 16px 0 0;
+        padding: 24px 20px 32px;
+        position: relative;
+        -webkit-overflow-scrolling: touch;
+    }
+    .offerte-popup-sluiten {
+        position: absolute;
+        top: 14px;
+        right: 16px;
+        background: none;
+        border: none;
+        font-size: 26px;
+        line-height: 1;
+        color: #666;
+        cursor: pointer;
+        padding: 4px 8px;
+    }
+    .offerte-popup-badge {
+        display: inline-block;
+        background: #dff0ea;
+        color: #2D8A6E;
+        border-radius: 20px;
+        padding: 4px 12px;
+        font-size: 12px;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+    .offerte-popup-header h3 {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0 0 4px;
+        color: #111;
+    }
+    .offerte-popup-header p {
+        font-size: 14px;
+        color: #555;
+        margin: 0 0 20px;
+    }
+    @media (min-width: 601px) {
+        .offerte-popup-overlay {
+            align-items: center;
+        }
+        .offerte-popup-inner {
+            max-width: 520px;
+            border-radius: 16px;
+        }
+    }
     </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -1322,7 +1390,57 @@ src="https://www.facebook.com/tr?id=1524652916329378&ev=PageView&noscript=1"
 </footer>
 
 <div class="sticky-cta">
-    <a href="index.html#contact" class="btn-primary btn-full">Gratis offerte aanvragen</a>
+    <button onclick="openOffertePopup()" class="btn-primary btn-full">Gratis offerte aanvragen</button>
+</div>
+
+<!-- OFFERTE POPUP -->
+<div id="offerte-popup" class="offerte-popup-overlay" onclick="sluitOffertePopup(event)">
+    <div class="offerte-popup-inner">
+        <button class="offerte-popup-sluiten" onclick="sluitOffertePopup()" aria-label="Sluiten">&times;</button>
+        <div class="offerte-popup-header">
+            <div class="offerte-popup-badge">Gratis &amp; vrijblijvend</div>
+            <h3>Gratis offerte aanvragen</h3>
+            <p>Ontvang binnen 24 uur een reactie. Geen verplichtingen.</p>
+        </div>
+        <form name="contact-financiering" method="POST" data-netlify="true" action="/bedankt.html">
+            <input type="hidden" name="form-name" value="contact-financiering">
+            <div class="form-row">
+                <div class="form-field">
+                    <label>Naam</label>
+                    <input type="text" name="naam" placeholder="Voor- en achternaam" required>
+                </div>
+                <div class="form-field">
+                    <label>Telefoon</label>
+                    <input type="tel" name="telefoon" placeholder="06 12 34 56 78" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-field">
+                    <label>E-mailadres</label>
+                    <input type="email" name="email" placeholder="jouw@email.nl" required>
+                </div>
+                <div class="form-field">
+                    <label>Postcode</label>
+                    <input type="text" name="postcode" placeholder="1234 AB" required>
+                </div>
+            </div>
+            <div class="form-field">
+                <label>Waarmee kunnen wij je helpen?</label>
+                <div class="radio-options">
+                    <label class="radio-option"><input type="radio" name="hulp" value="Kunststof kozijnen"><span>Kunststof kozijnen</span></label>
+                    <label class="radio-option"><input type="radio" name="hulp" value="Kunststof deuren"><span>Kunststof deuren</span></label>
+                    <label class="radio-option"><input type="radio" name="hulp" value="Schuifpui"><span>Schuifpui</span></label>
+                    <label class="radio-option"><input type="radio" name="hulp" value="Alles vervangen"><span>Alles vervangen</span></label>
+                </div>
+            </div>
+            <button type="submit" class="btn-primary btn-full" style="margin-top:8px;">Ja, plan mijn gratis adviesgesprek &rarr;</button>
+            <div class="form-belofte" style="margin-top:12px;">
+                <div class="belofte-item"><svg width="13" height="13" viewBox="0 0 20 20" fill="none"><polyline points="5 10 9 14 15 6" stroke="#2D8A6E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Wij bellen binnen 24 uur terug</div>
+                <div class="belofte-item"><svg width="13" height="13" viewBox="0 0 20 20" fill="none"><polyline points="5 10 9 14 15 6" stroke="#2D8A6E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Geen aanbetaling, nooit</div>
+                <div class="belofte-item"><svg width="13" height="13" viewBox="0 0 20 20" fill="none"><rect x="3" y="9" width="14" height="10" rx="2" fill="none" stroke="#2D8A6E" stroke-width="1.5"/><path d="M7 9V6a3 3 0 016 0v3" stroke="#2D8A6E" stroke-width="1.5"/></svg> AVG-conform &middot; Vrijblijvend</div>
+            </div>
+        </form>
+    </div>
 </div>
 
 <script>
@@ -1387,5 +1505,32 @@ function toggleFinFaq(btn) {
 }
 </script>
 
+<script>
+// ===== OFFERTE POPUP =====
+function openOffertePopup() {
+    document.getElementById('offerte-popup').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+function sluitOffertePopup(e) {
+    if (e && e.target !== document.getElementById('offerte-popup')) return;
+    document.getElementById('offerte-popup').classList.remove('open');
+    document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') sluitOffertePopup();
+});
+
+// Op mobiel: alle btn-primary links naar index.html#contact omzetten naar popup
+if (window.innerWidth <= 600) {
+    document.querySelectorAll('a.btn-primary[href="index.html#contact"], a.btn-outline-green[href="index.html#contact"]').forEach(function(a) {
+        a.removeAttribute('href');
+        a.style.cursor = 'pointer';
+        a.addEventListener('click', function(e) {
+            e.preventDefault();
+            openOffertePopup();
+        });
+    });
+}
+</script>
 </body>
 </html>
