@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gratis Offerte Aanvragen | 123KozijnenVergelijker.nl</title>
+    <meta name="description" content="Vraag vrijblijvend een gratis offerte aan voor kunststof kozijnen, deuren of schuifpuien. Wij bellen binnen 24 uur terug. Geen aanbetaling, nooit.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.123kozijnenvergelijker.nl/offerte-aanvragen.html">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .oa-hero {
+            background: linear-gradient(135deg, #142240 0%, #2D8A6E 100%);
+            padding: 56px 0 48px;
+            color: #fff;
+            text-align: center;
+        }
+        .oa-hero h1 {
+            font-size: clamp(26px, 4vw, 40px);
+            font-weight: 800;
+            margin: 0 0 12px;
+            line-height: 1.2;
+        }
+        .oa-hero h1 span { color: #7FD9BC; }
+        .oa-hero p {
+            font-size: 16px;
+            opacity: 0.88;
+            max-width: 520px;
+            margin: 0 auto 24px;
+            line-height: 1.6;
+        }
+        .oa-trust-row {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            font-size: 14px;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+        .oa-trust-row span::before { content: '✓ '; }
+
+        .oa-main {
+            padding: 56px 0 80px;
+            background: #f7f8fa;
+        }
+        .oa-inner {
+            display: grid;
+            grid-template-columns: 1fr 480px;
+            gap: 48px;
+            align-items: start;
+        }
+
+        /* LINKER KOLOM: voordelen */
+        .oa-voordelen h2 {
+            font-size: 26px;
+            font-weight: 800;
+            color: #142240;
+            margin: 0 0 8px;
+        }
+        .oa-voordelen > p {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.7;
+            margin: 0 0 32px;
+        }
+        .oa-stap-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 36px;
+        }
+        .oa-stap {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+        .oa-stap-nr {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #2D8A6E;
+            color: #fff;
+            font-weight: 700;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .oa-stap-tekst strong {
+            display: block;
+            font-size: 15px;
+            color: #142240;
+            margin-bottom: 2px;
+        }
+        .oa-stap-tekst span {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+        .oa-garanties {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid #e8ede8;
+        }
+        .oa-garantie {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: #333;
+        }
+        .oa-garantie-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: #dff0ea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .oa-reviews {
+            margin-top: 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+        }
+        .oa-stars { color: #F5A623; font-size: 18px; letter-spacing: 1px; }
+
+        /* RECHTER KOLOM: formulier */
+        .oa-form-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+            overflow: hidden;
+            position: sticky;
+            top: 24px;
+        }
+        .oa-form-header {
+            background: #2D8A6E;
+            color: #fff;
+            padding: 16px 24px;
+            font-weight: 700;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .oa-form-body { padding: 28px 24px 32px; }
+        .oa-form-body .form-field { margin-bottom: 16px; }
+        .oa-form-body label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 6px;
+        }
+        .oa-form-body input,
+        .oa-form-body select {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            color: #333;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+        .oa-form-body input:focus,
+        .oa-form-body select:focus {
+            outline: none;
+            border-color: #2D8A6E;
+        }
+        .oa-form-body .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .radio-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            background: #f5f5f5;
+            padding: 7px 12px;
+            border-radius: 6px;
+            border: 1px solid #e5e5e5;
+            transition: all 0.15s;
+        }
+        .radio-option:has(input:checked) {
+            background: #dff0ea;
+            border-color: #2D8A6E;
+            color: #2D8A6E;
+            font-weight: 600;
+        }
+        .radio-option input { display: none; }
+        .oa-form-belofte {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 14px;
+        }
+        .oa-form-belofte .belofte-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        @media (max-width: 960px) {
+            .oa-inner { grid-template-columns: 1fr; }
+            .oa-form-card { position: static; }
+        }
+        @media (max-width: 600px) {
+            .oa-hero { padding: 40px 0 36px; }
+            .oa-main { padding: 36px 0 60px; }
+            .oa-form-body { padding: 20px 16px 24px; }
+            .oa-form-body .form-row { grid-template-columns: 1fr; gap: 0; }
+            .oa-trust-row { gap: 12px; font-size: 13px; }
+        }
+    </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1524652916329378');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1524652916329378&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+
+<header class="header">
+    <div class="container header-inner">
+        <div class="logo">
+            <a href="index.html" style="text-decoration:none;">
+                <span class="logo-123">123</span><span class="logo-kozijnen">kozijnen</span><span class="logo-verg">vergelijker</span><span class="logo-nl">.nl</span>
+            </a>
+        </div>
+        <nav class="nav" id="navLinks">
+            <a href="kunststof-kozijnen.html">Kozijnen</a>
+            <a href="kunststof-deuren.html">Deuren</a>
+            <a href="kunststof-schuifpuien.html">Schuifpuien</a>
+            <a href="projecten.html">Projecten</a>
+            <a href="financiering.html">Financiering</a>
+            <a href="blog.html">Blog</a>
+            <a href="offerte-aanvragen.html" class="btn-nav active">Gratis offerte aanvragen</a>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="Menu openen"
+            onclick="document.getElementById('navLinks').classList.toggle('open');this.classList.toggle('open')">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="oa-hero">
+    <div class="container">
+        <h1>Gratis offerte aanvragen voor<br><span>kunststof kozijnen</span></h1>
+        <p>Wij brengen de beste opties voor jouw woning in kaart. Vrijblijvend adviesgesprek aan huis, scherpe prijs, gedetailleerde offerte binnen 24 uur.</p>
+        <div class="oa-trust-row">
+            <span>Vrijblijvend</span>
+            <span>Geen aanbetaling</span>
+            <span>Binnen 24 uur reactie</span>
+            <span>9.3 klantbeoordeling</span>
+        </div>
+    </div>
+</section>
+
+<!-- MAIN: voordelen + formulier -->
+<section class="oa-main">
+    <div class="container">
+        <div class="oa-inner">
+
+            <!-- LINKS: voordelen -->
+            <div class="oa-voordelen">
+                <h2>Zo werkt het</h2>
+                <p>Binnen 5 minuten aangevraagd. Wij regelen de rest — inclusief subsidie en financiering.</p>
+                <div class="oa-stap-list">
+                    <div class="oa-stap">
+                        <div class="oa-stap-nr">1</div>
+                        <div class="oa-stap-tekst">
+                            <strong>Vul het formulier in</strong>
+                            <span>Naam, postcode, telefoon en wat je wil vervangen. Dat is alles.</span>
+                        </div>
+                    </div>
+                    <div class="oa-stap">
+                        <div class="oa-stap-nr">2</div>
+                        <div class="oa-stap-tekst">
+                            <strong>Wij bellen je binnen 24 uur</strong>
+                            <span>Een van onze adviseurs belt je terug voor een persoonlijk gesprek.</span>
+                        </div>
+                    </div>
+                    <div class="oa-stap">
+                        <div class="oa-stap-nr">3</div>
+                        <div class="oa-stap-tekst">
+                            <strong>Adviesgesprek aan huis</strong>
+                            <span>Opmeting, advies op maat en een gedetailleerde offerte. Geheel gratis.</span>
+                        </div>
+                    </div>
+                    <div class="oa-stap">
+                        <div class="oa-stap-nr">4</div>
+                        <div class="oa-stap-tekst">
+                            <strong>Wij regelen subsidie &amp; financiering</strong>
+                            <span>ISDE-subsidie en Warmtefonds-aanvraag begeleiden wij gratis voor je.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="oa-garanties">
+                    <div class="oa-garantie">
+                        <div class="oa-garantie-icon">
+                            <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><polyline points="5 10 9 14 15 6" stroke="#2D8A6E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <div><strong>20 jaar garantie</strong> op materiaal en plaatsing</div>
+                    </div>
+                    <div class="oa-garantie">
+                        <div class="oa-garantie-icon">
+                            <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><polyline points="5 10 9 14 15 6" stroke="#2D8A6E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <div><strong>Geen aanbetaling</strong> — betalen doe je pas na plaatsing</div>
+                    </div>
+                    <div class="oa-garantie">
+                        <div class="oa-garantie-icon">
+                            <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><polyline points="5 10 9 14 15 6" stroke="#2D8A6E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <div><strong>Tot 30% subsidie</strong> via ISDE en Nationaal Warmtefonds</div>
+                    </div>
+                    <div class="oa-garantie">
+                        <div class="oa-garantie-icon">
+                            <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><polyline points="5 10 9 14 15 6" stroke="#2D8A6E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <div><strong>HR++ glas standaard</strong> inbegrepen in elke offerte</div>
+                    </div>
+                </div>
+
+                <div class="oa-reviews">
+                    <span class="oa-stars">★★★★★</span>
+                    <span><strong>9.3</strong> gemiddeld &middot; 523 huishoudens gingen je voor</span>
+                </div>
+            </div>
+
+            <!-- RECHTS: formulier -->
+            <div class="oa-form-card" id="offerte-form">
+                <div class="oa-form-header">
+                    <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 5h14M3 10h10M3 15h7" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+                    Gratis offerte — geen verplichtingen
+                </div>
+                <div class="oa-form-body">
+                    <form name="offerte-aanvragen" method="POST" data-netlify="true" action="/bedankt.html">
+                        <input type="hidden" name="form-name" value="offerte-aanvragen">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>Naam</label>
+                                <input type="text" name="naam" placeholder="Voor- en achternaam" required>
+                            </div>
+                            <div class="form-field">
+                                <label>Telefoon</label>
+                                <input type="tel" name="telefoon" placeholder="06 12 34 56 78" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>E-mailadres</label>
+                                <input type="email" name="email" placeholder="jouw@email.nl" required>
+                            </div>
+                            <div class="form-field">
+                                <label>Postcode</label>
+                                <input type="text" name="postcode" placeholder="1234 AB" required>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label>Waarmee kunnen wij je helpen?</label>
+                            <div class="radio-options">
+                                <label class="radio-option">
+                                    <input type="radio" name="hulp" value="Kunststof kozijnen">
+                                    <span>Kunststof kozijnen</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="hulp" value="Kunststof deuren">
+                                    <span>Kunststof deuren</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="hulp" value="Schuifpui">
+                                    <span>Schuifpui</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="hulp" value="Alles vervangen">
+                                    <span>Alles vervangen</span>
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary btn-full" style="margin-top:20px;">Ja, plan mijn gratis adviesgesprek &rarr;</button>
+                        <div class="oa-form-belofte">
+                            <div class="belofte-item">
+                                <svg width="13" height="13" viewBox="0 0 20 20" fill="none"><polyline points="5 10 9 14 15 6" stroke="#2D8A6E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                Wij bellen binnen 24 uur terug
+                            </div>
+                            <div class="belofte-item">
+                                <svg width="13" height="13" viewBox="0 0 20 20" fill="none"><polyline points="5 10 9 14 15 6" stroke="#2D8A6E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                Geen aanbetaling, nooit
+                            </div>
+                            <div class="belofte-item">
+                                <svg width="13" height="13" viewBox="0 0 20 20" fill="none"><rect x="3" y="9" width="14" height="10" rx="2" fill="none" stroke="#2D8A6E" stroke-width="1.5"/><path d="M7 9V6a3 3 0 016 0v3" stroke="#2D8A6E" stroke-width="1.5"/></svg>
+                                AVG-conform &middot; Vrijblijvend
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container footer-inner">
+        <div class="footer-logo">
+            <span class="logo-123">123</span><span class="logo-kozijnen">kozijnen</span><span class="logo-verg">vergelijker</span><span class="logo-nl">.nl</span>
+            <p>Kozijnen vergelijken &amp; laten plaatsen<br>Oldenzaal</p>
+        </div>
+        <div class="footer-links">
+            <h5>Producten</h5>
+            <a href="kunststof-kozijnen.html">Kunststof kozijnen</a>
+            <a href="kunststof-deuren.html">Kunststof deuren</a>
+            <a href="kunststof-schuifpuien.html">Schuifpuien</a>
+        </div>
+        <div class="footer-links">
+            <h5>Informatie</h5>
+            <a href="over-ons.html">Over ons</a>
+            <a href="projecten.html">Projecten</a>
+            <a href="index.html#subsidie">Subsidie</a>
+            <a href="financiering.html">Financiering</a>
+        </div>
+        <div class="footer-contact">
+            <h5>Contact</h5>
+            <a href="tel:0541235222" class="footer-contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                0541-23 52 22
+            </a>
+            <a href="mailto:info@123kozijnenvergelijker.nl" class="footer-contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                info@123kozijnenvergelijker.nl
+            </a>
+            <div class="footer-contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Oldenzaal
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 123KozijnenVergelijker.nl &middot; <a href="privacyverklaring.html">Privacyverklaring</a> &middot; <a href="algemene-voorwaarden.html">Algemene voorwaarden</a></p>
+    </div>
+</footer>
+
+</body>
+</html>
