@@ -140,9 +140,32 @@
             background: #fff;
             border-radius: 16px;
             box-shadow: 0 4px 32px rgba(0,0,0,0.10);
-            overflow: hidden;
+            overflow: visible;
             position: sticky;
             top: 24px;
+        }
+        .oa-badge {
+            position: absolute;
+            top: -22px;
+            right: -22px;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: #F5A623;
+            color: #fff;
+            font-size: 10.5px;
+            font-weight: 700;
+            line-height: 1.25;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            box-sizing: border-box;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.18);
+            transform: rotate(10deg);
+            pointer-events: none;
+            z-index: 10;
         }
         .oa-form-header {
             background: #2D8A6E;
@@ -186,29 +209,34 @@
             gap: 12px;
         }
         .radio-options {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
         }
         .radio-option {
             display: flex;
             align-items: center;
-            gap: 6px;
-            font-size: 14px;
+            justify-content: center;
+            font-size: 12.5px;
+            font-weight: 600;
             cursor: pointer;
             background: #f5f5f5;
-            padding: 7px 12px;
+            padding: 8px 10px;
             border-radius: 6px;
             border: 1px solid #e5e5e5;
             transition: all 0.15s;
+            text-align: center;
         }
         .radio-option:has(input:checked) {
             background: #dff0ea;
             border-color: #2D8A6E;
             color: #2D8A6E;
-            font-weight: 600;
         }
-        .radio-option input { display: none; }
+        .radio-option input {
+            display: none !important;
+            appearance: none;
+            -webkit-appearance: none;
+        }
         .oa-form-belofte {
             display: flex;
             flex-direction: column;
@@ -233,6 +261,13 @@
             .oa-form-body { padding: 20px 16px 24px; }
             .oa-form-body .form-row { grid-template-columns: 1fr; gap: 0; }
             .oa-trust-row { gap: 12px; font-size: 13px; }
+            .oa-badge {
+                width: 76px;
+                height: 76px;
+                font-size: 9.5px;
+                top: -16px;
+                right: -10px;
+            }
         }
     </style>
 <!-- Meta Pixel Code -->
@@ -282,7 +317,7 @@ src="https://www.facebook.com/tr?id=1524652916329378&ev=PageView&noscript=1"
 <section class="oa-hero">
     <div class="container">
         <h1>Gratis offerte aanvragen voor<br><span>kunststof kozijnen</span></h1>
-        <p>Wij brengen de beste opties voor jouw woning in kaart. Vrijblijvend adviesgesprek aan huis, scherpe prijs, gedetailleerde offerte binnen 24 uur.</p>
+        <p>Vrijblijvend adviesgesprek aan huis. Scherpe prijs en een gedetailleerde offerte binnen 24 uur.</p>
         <div class="oa-trust-row">
             <span>Vrijblijvend</span>
             <span>Geen aanbetaling</span>
@@ -300,7 +335,7 @@ src="https://www.facebook.com/tr?id=1524652916329378&ev=PageView&noscript=1"
             <!-- LINKS: voordelen -->
             <div class="oa-voordelen">
                 <h2>Zo werkt het</h2>
-                <p>Binnen 5 minuten aangevraagd. Wij regelen de rest — inclusief subsidie en financiering.</p>
+                <p>Binnen 5 minuten aangevraagd. Wij regelen de rest, inclusief subsidie en financiering.</p>
                 <div class="oa-stap-list">
                     <div class="oa-stap">
                         <div class="oa-stap-nr">1</div>
@@ -313,7 +348,7 @@ src="https://www.facebook.com/tr?id=1524652916329378&ev=PageView&noscript=1"
                         <div class="oa-stap-nr">2</div>
                         <div class="oa-stap-tekst">
                             <strong>Wij bellen je binnen 24 uur</strong>
-                            <span>Een van onze adviseurs belt je terug voor een persoonlijk gesprek.</span>
+                            <span>Onze adviseur belt je persoonlijk terug.</span>
                         </div>
                     </div>
                     <div class="oa-stap">
@@ -327,7 +362,7 @@ src="https://www.facebook.com/tr?id=1524652916329378&ev=PageView&noscript=1"
                         <div class="oa-stap-nr">4</div>
                         <div class="oa-stap-tekst">
                             <strong>Wij regelen subsidie &amp; financiering</strong>
-                            <span>ISDE-subsidie en Warmtefonds-aanvraag begeleiden wij gratis voor je.</span>
+                            <span>Wij begeleiden gratis de ISDE-subsidie en Warmtefonds-aanvraag voor je.</span>
                         </div>
                     </div>
                 </div>
@@ -343,13 +378,13 @@ src="https://www.facebook.com/tr?id=1524652916329378&ev=PageView&noscript=1"
                         <div class="oa-garantie-icon">
                             <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><polyline points="5 10 9 14 15 6" stroke="#2D8A6E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </div>
-                        <div><strong>Geen aanbetaling</strong> — betalen doe je pas na plaatsing</div>
+                        <div><strong>Geen aanbetaling</strong>, je betaalt pas na plaatsing</div>
                     </div>
                     <div class="oa-garantie">
                         <div class="oa-garantie-icon">
                             <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><polyline points="5 10 9 14 15 6" stroke="#2D8A6E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </div>
-                        <div><strong>Tot 30% subsidie</strong> via ISDE en Nationaal Warmtefonds</div>
+                        <div><strong>Tot 30% ISDE-subsidie</strong> en 0% rente via het Warmtefonds</div>
                     </div>
                     <div class="oa-garantie">
                         <div class="oa-garantie-icon">
@@ -366,10 +401,11 @@ src="https://www.facebook.com/tr?id=1524652916329378&ev=PageView&noscript=1"
             </div>
 
             <!-- RECHTS: formulier -->
-            <div class="oa-form-card" id="offerte-form">
+            <div class="oa-form-card" id="offerte-form" style="position:relative;">
+                <div class="oa-badge">Deze maand<br>Gratis<br>Horren &amp;<br>HR++ glas</div>
                 <div class="oa-form-header">
                     <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 5h14M3 10h10M3 15h7" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
-                    Gratis offerte — geen verplichtingen
+                    Gratis offerte, geen verplichtingen
                 </div>
                 <div class="oa-form-body">
                     <form name="offerte-aanvragen" method="POST" data-netlify="true" action="/bedankt.html">
@@ -415,7 +451,7 @@ src="https://www.facebook.com/tr?id=1524652916329378&ev=PageView&noscript=1"
                                 </label>
                             </div>
                         </div>
-                        <button type="submit" class="btn-primary btn-full" style="margin-top:20px;">Ja, plan mijn gratis adviesgesprek &rarr;</button>
+                        <button type="submit" class="btn-primary btn-full" style="margin-top:20px;">Ja, ik wil graag een offerte ontvangen &rarr;</button>
                         <div class="oa-form-belofte">
                             <div class="belofte-item">
                                 <svg width="13" height="13" viewBox="0 0 20 20" fill="none"><polyline points="5 10 9 14 15 6" stroke="#2D8A6E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
