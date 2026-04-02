@@ -89,7 +89,7 @@ ul { list-style: none; }
     padding-bottom: 16px;
 }
 
-.logo { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; }
+.logo { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; display: flex; align-items: baseline; }
 .logo a { text-decoration: none; }
 .logo-123 { color: #fff; }
 .logo-kozijnen { color: #fff; }
