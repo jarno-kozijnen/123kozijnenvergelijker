@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import type { LegacyPage } from "./legacy-content";
+import { neutralizeComparisonCopy, type LegacyPage } from "./legacy-content";
 
 export const SITE_URL = "https://www.123kozijnenvergelijker.nl";
 export const SITE_NAME = "123KozijnenVergelijker";
@@ -66,7 +66,7 @@ function titleFor(slug: string, page: LegacyPage, article?: ArticleSeo) {
 }
 
 function descriptionFor(slug: string, page: LegacyPage, article?: ArticleSeo) {
-  if (article?.meta_desc) return article.meta_desc;
+  if (article?.meta_desc) return neutralizeComparisonCopy(article.meta_desc);
   const city = page.type === "location" ? cityFromSlug(slug) : "";
   if (city) {
     return `Kunststof kozijnen in ${city}? Lees over prijzen, glas, montage en belangrijke aandachtspunten en vergelijk vrijblijvend offertes van passende aanbieders.`;
