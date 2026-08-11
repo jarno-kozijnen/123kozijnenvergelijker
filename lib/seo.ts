@@ -43,6 +43,11 @@ function stripBrand(title: string) {
     .trim();
 }
 
+function withBrandWhenCompact(core: string) {
+  const branded = `${core} | ${SITE_NAME}`;
+  return branded.length <= 62 ? branded : core;
+}
+
 export function cityFromSlug(slug: string) {
   if (!/^kozijnen-[a-z0-9-]+\.html$/i.test(slug)) return "";
   const raw = slug.replace(/^kozijnen-/, "").replace(/\.html$/, "");
@@ -53,15 +58,11 @@ export function cityFromSlug(slug: string) {
 }
 
 function titleFor(slug: string, page: LegacyPage, article?: ArticleSeo) {
-  if (article) {
-    const core = stripBrand(article.titel);
-    return core.length > 58 ? core : `${core} | ${SITE_NAME}`;
-  }
+  if (article) return withBrandWhenCompact(stripBrand(article.titel));
   const city = page.type === "location" ? cityFromSlug(slug) : "";
   if (city) return `Kunststof kozijnen ${city} | Prijzen & offertes vergelijken`;
   if (titleOverrides[slug]) return titleOverrides[slug];
-  const core = stripBrand(page.title || page.h1);
-  return core.length > 60 ? core : `${core} | ${SITE_NAME}`;
+  return withBrandWhenCompact(stripBrand(page.title || page.h1));
 }
 
 function descriptionFor(slug: string, page: LegacyPage, article?: ArticleSeo) {
@@ -73,10 +74,23 @@ function descriptionFor(slug: string, page: LegacyPage, article?: ArticleSeo) {
   return descriptionOverrides[slug] || page.description;
 }
 
+function canonicalFor(slug: string, page: LegacyPage) {
+  if (page.canonical) {
+    try {
+      const old = new URL(page.canonical);
+      const pathname = old.pathname === "/" ? `/${slug}` : old.pathname;
+      return `${SITE_URL}${pathname}${old.search}`;
+    } catch {
+      // Fall through to the stable site URL below.
+    }
+  }
+  return `${SITE_URL}/${slug}`;
+}
+
 export function metadataForLegacy(slug: string, page: LegacyPage, article?: ArticleSeo): Metadata {
   const title = titleFor(slug, page, article);
   const description = descriptionFor(slug, page, article);
-  const canonical = page.canonical || `${SITE_URL}/${slug}`;
+  const canonical = canonicalFor(slug, page);
   const shouldIndex = !noIndexSlugs.has(slug);
 
   const metadata: Metadata = {
