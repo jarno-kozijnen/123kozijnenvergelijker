@@ -77,6 +77,86 @@ function textOnly(value: string) {
     .trim();
 }
 
+export function neutralizeComparisonCopy(value: string) {
+  const replacements: Array<[RegExp, string]> = [
+    [
+      /Bij 123KozijnenVergelijker is HR\+\+ glas altijd standaard inbegrepen en geldt er 20 jaar garantie\./gi,
+      "Controleer per offerte welk glastype is inbegrepen en welke garantie geldt op materiaal en montage.",
+    ],
+    [
+      /Onze kozijnen worden gemaakt van hoogwaardig VEKA PVC-profiel en worden op maat geproduceerd voor jouw woning\. HR\+\+ glas is standaard inbegrepen\./gi,
+      "Kunststof kozijnen worden op maat geproduceerd en zijn verkrijgbaar met verschillende profielmerken en glastypen. Controleer per offerte welk profiel en glas zijn inbegrepen.",
+    ],
+    [
+      /Onze adviseurs helpen je bij de aanvraag zodat je geen geld laat liggen\./gi,
+      "Controleer de actuele voorwaarden bij RVO en vraag indien nodig hulp bij de subsidieaanvraag.",
+    ],
+    [
+      /Plan een vrijblijvend adviesgesprek aan huis\. We meten op, geven advies en sturen een offerte binnen 24 uur\./gi,
+      "Vraag vrijblijvend offertes aan en vergelijk prijs, materiaal, glas, montage, planning en voorwaarden.",
+    ],
+    [
+      /Onze monteurs werken schoon en zorgen dat je woning aan het eind van de dag wind- en waterdicht is\./gi,
+      "Bespreek met de gekozen aanbieder hoe de montage wordt uitgevoerd en hoe de woning wordt opgeleverd.",
+    ],
+    [
+      /Bij ieder kozijn ontvang je gratis horren in dezelfde kleur\./gi,
+      "Vraag per offerte of horren zijn inbegrepen of als optie worden aangeboden.",
+    ],
+    [
+      /RC2 inbraakwerende beslag standaard\. RC3 als optie\./gi,
+      "Vergelijk welk veiligheidsbeslag standaard is inbegrepen en welke upgrades mogelijk zijn.",
+    ],
+    [
+      /<tr><td>Profielmateriaal<\/td><td>VEKA PVC \(6-kamer profiel\)<\/td><\/tr>/gi,
+      "<tr><td>Profielmateriaal</td><td>Vergelijk merk, materiaal en profielopbouw per offerte</td></tr>",
+    ],
+    [
+      /<tr><td>Garantie kozijn<\/td><td>20 jaar<\/td><\/tr>/gi,
+      "<tr><td>Garantie kozijn</td><td>Verschilt per aanbieder en product</td></tr>",
+    ],
+    [
+      /<tr><td>Garantie isolatieglas<\/td><td>10 jaar dichting<\/td><\/tr>/gi,
+      "<tr><td>Garantie isolatieglas</td><td>Controleer de voorwaarden per offerte</td></tr>",
+    ],
+    [
+      /<tr><td>Kleuren<\/td><td>200\+ RAL kleuren en foliekleur<\/td><\/tr>/gi,
+      "<tr><td>Kleuren</td><td>Kleur- en folieaanbod verschilt per aanbieder</td></tr>",
+    ],
+    [/HR\+\+ glas standaard inbegrepen/gi, "controleer welk glastype standaard is inbegrepen"],
+    [/HR\+\+ glas standaard/gi, "HR++ glas: controleer wat is inbegrepen"],
+    [/20 jaar garantie/gi, "garantie volgens de voorwaarden van de aanbieder"],
+    [/KOMO-gecertificeerd/gi, "controleer relevante keurmerken per aanbieder"],
+    [/Gratis horren/gi, "Horren als optie"],
+    [/gratis horraam inbegrepen/gi, "vraag of een horraam is inbegrepen"],
+    [/onze kunststof kozijnen/gi, "kunststof kozijnen"],
+    [/onze kozijnen/gi, "kunststof kozijnen"],
+    [/onze kunststof deuren/gi, "kunststof deuren"],
+    [/onze deuren/gi, "kunststof deuren"],
+    [/onze kunststof schuifpuien/gi, "kunststof schuifpuien"],
+    [/onze schuifpuien/gi, "kunststof schuifpuien"],
+    [/onze producten/gi, "de mogelijkheden"],
+    [/onze adviseurs/gi, "een adviseur van de gekozen aanbieder"],
+    [/onze adviseur/gi, "een adviseur van de gekozen aanbieder"],
+    [/onze monteurs/gi, "de monteurs van de gekozen aanbieder"],
+    [/onze vakmensen/gi, "de vakmensen van de gekozen aanbieder"],
+    [/onze installateurs/gi, "de installateurs die je vergelijkt"],
+    [/wij leveren alles op maat/gi, "veel aanbieders leveren maatwerk"],
+    [/wij leveren/gi, "aanbieders leveren"],
+    [/wij plaatsen/gi, "installateurs plaatsen"],
+    [/wij monteren/gi, "installateurs monteren"],
+    [/wij komen/gi, "de gekozen aanbieder komt"],
+    [/we komen/gi, "de gekozen aanbieder komt"],
+    [/we meten op/gi, "de gekozen aanbieder meet op"],
+    [/we geven advies/gi, "je bespreekt de mogelijkheden"],
+    [/we sturen een offerte/gi, "je ontvangt een offerte"],
+    [/neem contact met ons op/gi, "start een vrijblijvende vergelijking"],
+    [/bel ons voor/gi, "vraag informatie aan over"],
+  ];
+
+  return replacements.reduce((result, [pattern, replacement]) => result.replace(pattern, replacement), value);
+}
+
 function getMeta(html: string, name: string) {
   const first = new RegExp(`<meta[^>]+name=["']${name}["'][^>]+content=["']([^"']*)["'][^>]*>`, "i");
   const second = new RegExp(`<meta[^>]+content=["']([^"']*)["'][^>]+name=["']${name}["'][^>]*>`, "i");
@@ -104,7 +184,7 @@ function rewriteLinks(fragment: string) {
 }
 
 function sanitize(fragment: string) {
-  return rewriteLinks(fragment)
+  const cleaned = rewriteLinks(fragment)
     .replace(/<script\b[\s\S]*?<\/script>/gi, "")
     .replace(/<style\b[\s\S]*?<\/style>/gi, "")
     .replace(/<noscript\b[\s\S]*?<\/noscript>/gi, "")
@@ -117,8 +197,9 @@ function sanitize(fragment: string) {
     .replace(/\sstyle=["'][^"']*["']/gi, "")
     .replace(/\sdata-netlify=["'][^"']*["']/gi, "")
     .replace(/<button([^>]*)>/gi, '<span class="legacyButton"$1>')
-    .replace(/<\/button>/gi, "</span>")
-    .trim();
+    .replace(/<\/button>/gi, "</span>");
+
+  return neutralizeComparisonCopy(cleaned).trim();
 }
 
 function articleContent(html: string) {
@@ -185,7 +266,8 @@ export function getLegacyPage(slug: string): LegacyPage | null {
   const type = pageTypeFor(slug, html);
   const title = getTitle(html) || getH1(html) || slug.replace(/\.html$/, "").replace(/-/g, " ");
   const h1 = getH1(html) || title.split("|")[0].trim();
-  const description = getMeta(html, "description") || `Lees meer over ${h1.toLowerCase()} en vergelijk de mogelijkheden voor jouw woning.`;
+  const rawDescription = getMeta(html, "description") || `Lees meer over ${h1.toLowerCase()} en vergelijk de mogelijkheden voor jouw woning.`;
+  const description = neutralizeComparisonCopy(rawDescription);
   const content = type === "article" ? articleContent(html) : type === "location" ? locationContent(html) : type === "product" ? productContent(html) : standardContent(html);
 
   return {
